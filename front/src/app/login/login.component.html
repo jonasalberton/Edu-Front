@@ -1,3 +1,17 @@
-<div class="full-container login-background">
-    <mat-card class="card-login">Simple card</mat-card>
+<div  class="card-login">
+    <div class="container">
+        <label class="title">EDU</label>
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm" autocomplete="off" class="form">
+            <mat-form-field  color="primary" >
+                <input matInput placeholder="email" name="email"  [(ngModel)]="usuario.email" required type="email">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="senha" name="senha" [(ngModel)]="usuario.senha" required type="password">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" class="logar" type="submit" [disabled]="!heroForm.form.valid">Entrar</button>
+        </form>
+    </div>
 </div>
+
