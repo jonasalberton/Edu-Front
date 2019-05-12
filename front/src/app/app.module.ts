@@ -1,3 +1,4 @@
+import { EnviroumentModule } from './enviroument/enviroument.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,7 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     CommonModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    EnviroumentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
