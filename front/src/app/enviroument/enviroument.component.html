@@ -1,5 +1,10 @@
-<mat-toolbar class="toolbar">
-    <button mat-icon-button color="primary">
-        <mat-icon svgIcon="menu"></mat-icon>
-    </button>
-</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="over" [opened]="menuAberto" class="sidenav">Sidenav </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+            <mat-toolbar class="toolbar">
+                    <button mat-icon-button color="primary" (click)="menuAberto=!menuAberto">
+                        <mat-icon svgIcon="menu"></mat-icon>
+                    </button>
+                </mat-toolbar>    
+    </mat-sidenav-content>
+</mat-sidenav-container>
