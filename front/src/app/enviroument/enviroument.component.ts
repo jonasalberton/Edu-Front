@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-enviroument',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnviroumentComponent implements OnInit {
 	menuAberto = false;
-	constructor() { }
+
+	constructor(private router: Router) { }
 
 	ngOnInit() {
 	}
 
+	logout(): void {
+		this.router.navigate(['/login']);
+	}
+
+	backdropclick(event) {
+		console.log('event', event);
+	}
 }

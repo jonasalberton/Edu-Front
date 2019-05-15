@@ -1,9 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav mode="over" [opened]="menuAberto" class="sidenav">Sidenav </mat-sidenav>
-    <mat-sidenav-content class="sidenav-content">
+    <mat-sidenav-content class="sidenav-content" (backdropClick)="backdropClick($event)">
             <mat-toolbar class="toolbar">
                     <button mat-icon-button color="primary" (click)="menuAberto=!menuAberto">
                         <mat-icon svgIcon="menu"></mat-icon>
+                    </button>
+
+                    <button mat-icon-button color="primary" class="exit-button" (click)="logout()">
+                        <mat-icon  svgIcon="exit"></mat-icon>
                     </button>
                 </mat-toolbar>    
     </mat-sidenav-content>
