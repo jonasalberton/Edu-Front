@@ -13,5 +13,6 @@ export class AppComponent {
 	svgIconBuilder: SvgIconBuilder;
 	constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
 		this.svgIconBuilder = new SvgIconBuilder(matIconRegistry, domSanitizer);
-	}
+	} 
+	
 }
