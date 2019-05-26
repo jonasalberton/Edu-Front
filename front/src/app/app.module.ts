@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { EnviroumentModule } from './enviroument/enviroument.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     FormsModule,
     MatButtonModule,
-    EnviroumentModule
+    EnviroumentModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

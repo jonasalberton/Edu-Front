@@ -1,3 +1,5 @@
+import { UsuarioService } from './../service/usuario.service';
+import { AbstractService } from './../service/abstract/abstract.service';
 import { Usuario } from './../models/usuario.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,13 +12,18 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 	usuario: Usuario = new Usuario();
 
-	constructor(private router: Router) {
+	constructor(private router: Router,
+				private usuarioService: UsuarioService) {
 	 }
 
 	ngOnInit() {
 	}
 
 	onSubmit() {
-		this.router.navigate(['/app']);
+		this.usuarioService.autenticarUsuario(this.usuario).subscribe(
+			usuario => console.log('sucesso',usuario),
+			error => console.log('erro', error)
+		)
+		// this.router.navigate(['/app']);
 	}
 }
