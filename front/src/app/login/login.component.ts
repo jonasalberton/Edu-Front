@@ -21,9 +21,14 @@ export class LoginComponent implements OnInit {
 
 	onSubmit() {
 		this.usuarioService.autenticarUsuario(this.usuario).subscribe(
-			usuario => console.log('sucesso',usuario),
+			usuario => {
+				if(usuario !== null) {
+					this.router.navigate(['/app']);
+				} else {
+					alert('Senha errada');
+				}
+			},
 			error => console.log('erro', error)
 		)
-		// this.router.navigate(['/app']);
 	}
 }

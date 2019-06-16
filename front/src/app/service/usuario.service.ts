@@ -10,10 +10,12 @@ import { Observable } from 'rxjs';
 export class UsuarioService extends AbstractService<Usuario>{
 
 	constructor(public http: HttpClient) {
-		super(http, "/api/usuario");
+		super(http, "/usuario");
 	}
 
 	autenticarUsuario(usuario: Usuario): Observable<Usuario> {
 		return this.httpPost(usuario, '/autenticar');
 	}
+
+
 }

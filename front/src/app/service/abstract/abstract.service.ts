@@ -29,13 +29,32 @@ export class AbstractService<T> {
     }
 
     getById(id: any): Observable<T> {
-        return this.http.get<T>(this.getUrl() + `/${id}`, httpOptions);
+        return this.httpGet(`/${id}`);
+    }
+
+    getAll(path?: string): Observable<T> {
+        return this.httpGet(path);
+    }
+
+    deleteById(id: string): Observable<T> {
+		return this.httpDelete(`/${id}`);
+    }
+
+    httpGet(path: string): Observable<T> {
+        return this.http.get<T>(this.getUrl() + path, httpOptions);
     }
 
     httpPost(objeto: T, path: string): Observable<T> {
         return this.http.post<T>(this.getUrl() + path, objeto, httpOptions);
     }
 
+    httpPut(objeto: T, path: string): Observable<T> {
+        return this.http.put<T>(this.getUrl() + path, objeto, httpOptions);
+    }
+
+    httpDelete(path: string): Observable<T> {
+        return this.http.delete<T>(`${this.getUrl()}${path} `  + path, httpOptions);
+    }
     private getUrl() {
         return `${this.HOST_API}${this.URI}`;
     }
