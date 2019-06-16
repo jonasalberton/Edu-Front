@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 	styleUrls: ['./enviroument.component.css']
 })
 export class EnviroumentComponent implements OnInit {
-	menuAberto = false;
+	status = true;
 
 	constructor(private router: Router) { }
 
@@ -18,7 +18,7 @@ export class EnviroumentComponent implements OnInit {
 		this.router.navigate(['/login']);
 	}
 
-	backdropclick(event) {
-		console.log('event', event);
+	changeClassSidenav() {
+		this.status = !this.status;
 	}
 }

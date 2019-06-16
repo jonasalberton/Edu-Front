@@ -1,14 +1,11 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="over" [opened]="menuAberto" class="sidenav">Sidenav </mat-sidenav>
-    <mat-sidenav-content class="sidenav-content" (backdropClick)="backdropClick($event)">
-            <mat-toolbar class="toolbar">
-                    <button mat-icon-button color="primary" (click)="menuAberto=!menuAberto">
-                        <mat-icon svgIcon="menu"></mat-icon>
-                    </button>
+<app-toolbar (clickMenuEvent)="changeClassSidenav()"></app-toolbar>
+    
+<div class="app-sidenav-container">
+    <div class="app-sidenav" [ngClass]="{'app-sidenav-close': status}">
+        <app-menu-principal></app-menu-principal>
+    </div>
 
-                    <button mat-icon-button color="primary" class="exit-button" (click)="logout()">
-                        <mat-icon  svgIcon="exit"></mat-icon>
-                    </button>
-                </mat-toolbar>    
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    <div class="app-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
