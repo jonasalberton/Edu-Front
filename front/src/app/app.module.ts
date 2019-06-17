@@ -15,13 +15,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { AtividadeItemListComponent } from './atividade-item-list/atividade-item-list.component';
+import { AtividadeComponent } from './atividade/atividade.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LoginComponent,
 		ListaAtividadesComponent,
-		AtividadeItemListComponent
+		AtividadeItemListComponent,
+		AtividadeComponent
 	],
 	imports: [
 		BrowserModule,
