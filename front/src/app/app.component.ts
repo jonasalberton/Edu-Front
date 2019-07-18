@@ -1,7 +1,7 @@
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
-import { SvgIconBuilder } from './util/svg-icon-builder';
 import { Component } from '@angular/core';
+import { SvgIconBuilder } from './shared/util/svg-icon-builder';
 
 @Component({
 	selector: 'app-root',

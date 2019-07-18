@@ -1,7 +1,6 @@
-import { environment } from './../../../environments/environment';
+import { environment } from './../../../../environments/environment';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Usuario } from 'src/app/models/usuario.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 

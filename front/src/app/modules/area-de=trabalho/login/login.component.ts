@@ -1,8 +1,7 @@
-import { UsuarioService } from './../service/usuario.service';
-import { AbstractService } from './../service/abstract/abstract.service';
-import { Usuario } from './../models/usuario.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from '../../../shared/models/usuario.model';
+import { UsuarioService } from '../../service/usuario.service';
 
 @Component({
 	selector: 'app-login',

@@ -1,6 +1,6 @@
-import { Atividade } from './../models/atividade.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Atividade } from '../../shared/models/atividade.model';
 
 @Component({
 	selector: 'atividade-item-list',
