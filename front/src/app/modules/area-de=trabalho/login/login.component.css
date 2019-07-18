@@ -11,7 +11,7 @@
 
 .card-login {
     background-color: white;
-    min-width: 350px;
+    min-width: 310px;
     padding: 20px 20px;
     display: flex;
     align-items: center;
@@ -27,45 +27,25 @@
 .form {
     display: flex;
     flex-flow: column;
-    padding: 0 8%;
+    padding: 25px 0;
+    width: 250px;
+}
+
+.botao-entrar {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.titulo {
+    font-size: -webkit-xxx-large;
+    padding-bottom: 11px;
 }
 
 
-/* 
-.title {
-    color: #606060;
-    font-weight: bold;
-    font-size: 5em;
-    text-align: center;
-    text-decoration: underline;
-    -webkit-text-decoration-color: #fbc02d;
-    text-decoration-color: #42736d;
-    -webkit-text-decoration-style: solid;
-    text-decoration-style: solid;
-    display: block;
-}
-
-.form {
-    display: flex;
-    flex-flow: column;
-    padding: 0 8%;
-    color: white;
-}
-
-.logar {
-    margin-top: 20px;
-    max-width: 100px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    display: flex;
-    align-self: center;
-}
-
-@media screen and (max-width: 920px) {
-    .background {
-        height:100%;
+@media screen and (max-width: 480px) {
+    .card-login {
         width: 100%;
-        border-radius: 0;
-        color: white;
-    }   
-} */
+        height: 100%;
+        min-width: none;
+    }
+}

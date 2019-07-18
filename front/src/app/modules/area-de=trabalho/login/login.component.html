@@ -1,6 +1,6 @@
 <div class="background">
     <div class="card-login">
-        <label>EDU</label>
+        <label class="titulo">EDU</label>
         <label class="menssagem-fazer-login">Faça o login para continuar</label>
         <form (ngSubmit)="onSubmit()" #heroForm="ngForm" autocomplete="off" class="form">
             <mat-form-field  color="primary" >
@@ -11,9 +11,8 @@
                 <input matInput  color="primary" placeholder="senha" name="senha" [(ngModel)]="usuario.senha" required type="password">
             </mat-form-field>
 
-            <button mat-raised-button color="primary"  type="submit" >Entrar</button>
+            <button class="botao-entrar" mat-raised-button color="primary" type="submit">Entrar</button>
         </form> 
         <button mat-raised-button   type="button" >Cadastre-se gratuitamente</button>
     </div>
 </div>
-
