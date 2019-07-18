@@ -1,17 +1,19 @@
-<div  class="card-login">
-    <div class="container">
-        <label class="title">EDU</label>
+<div class="background">
+    <div class="card-login">
+        <label>EDU</label>
+        <label class="menssagem-fazer-login">Faça o login para continuar</label>
         <form (ngSubmit)="onSubmit()" #heroForm="ngForm" autocomplete="off" class="form">
             <mat-form-field  color="primary" >
                 <input matInput placeholder="email" name="email"  [(ngModel)]="usuario.email" required type="email">
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="senha" name="senha" [(ngModel)]="usuario.senha" required type="password">
+                <input matInput  color="primary" placeholder="senha" name="senha" [(ngModel)]="usuario.senha" required type="password">
             </mat-form-field>
 
-            <button mat-raised-button color="primary" class="logar" type="submit" [disabled]="!heroForm.form.valid">Entrar</button>
-        </form>
+            <button mat-raised-button color="primary"  type="submit" >Entrar</button>
+        </form> 
+        <button mat-raised-button   type="button" >Cadastre-se gratuitamente</button>
     </div>
 </div>
 

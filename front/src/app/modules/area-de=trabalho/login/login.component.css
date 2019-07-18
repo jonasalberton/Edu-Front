@@ -1,5 +1,6 @@
-.card-login {
-    background-color: #191919;
+.background {
+    background: no-repeat center center scroll;
+    background-image: url(/assets/images/wallpaper-login.png);
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -8,17 +9,38 @@
     justify-content: center;
 }
 
-.container {
+.card-login {
+    background-color: white;
     min-width: 350px;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
 }
 
+.menssagem-fazer-login {
+    font-size: .8rem;
+    color: #696868;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    padding: 0 8%;
+}
+
+
+/* 
 .title {
-    color: white;
+    color: #606060;
     font-weight: bold;
     font-size: 5em;
     text-align: center;
     text-decoration: underline;
-    text-decoration-color: #fbc02d;
+    -webkit-text-decoration-color: #fbc02d;
+    text-decoration-color: #42736d;
+    -webkit-text-decoration-style: solid;
     text-decoration-style: solid;
     display: block;
 }
@@ -40,10 +62,10 @@
 }
 
 @media screen and (max-width: 920px) {
-    .card-login {
+    .background {
         height:100%;
         width: 100%;
         border-radius: 0;
         color: white;
     }   
-}
+} */
