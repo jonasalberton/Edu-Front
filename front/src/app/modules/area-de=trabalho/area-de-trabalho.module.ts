@@ -6,16 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         ToolbarComponent,
         MenuPrincipalComponent,
-        CadastroUsuarioComponent,
-        LoginComponent
     ],
     imports: [
         MatIconModule,
@@ -28,7 +24,6 @@ import { LoginComponent } from './login/login.component';
     exports: [
         ToolbarComponent,
         MenuPrincipalComponent,
-        CadastroUsuarioComponent
     ],
     providers: [
     ],
