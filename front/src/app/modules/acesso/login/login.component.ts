@@ -19,19 +19,24 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit() {
-		this.usuarioService.autenticarUsuario(this.usuario).subscribe(
-			usuario => {
-				if(usuario !== null) {
-					this.router.navigate(['/app']);
-				} else {
-					alert('Senha errada');
-				}
-			},
-			error => console.log('erro', error)
-		)
+		this.navegarParaAppContainer();
+		// this.usuarioService.autenticarUsuario(this.usuario).subscribe(
+		// 	usuario => {
+		// 		if(usuario !== null) {
+		// 			this.router.navigate(['/app']);
+		// 		} else {
+		// 			alert('Senha errada');
+		// 		}
+		// 	},
+		// 	error => console.log('erro', error)
+		// )
 	}
 
 	navegarNovoCadastro(): void {
-		this.router.navigate(['/cadastro-usuario']);	
+		this.router.navigate(['/cadastro-usuario']);
+	}
+
+	navegarParaAppContainer(): void {
+		this.router.navigate(['/app']);
 	}
 }
