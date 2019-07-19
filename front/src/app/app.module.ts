@@ -11,13 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { LoginComponent } from './modules/area-de=trabalho/login/login.component';
 import { EnviroumentModule } from './modules/enviroument/enviroument.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		LoginComponent,
 	],
 	imports: [
 		BrowserModule,

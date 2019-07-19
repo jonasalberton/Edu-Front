@@ -30,4 +30,8 @@ export class LoginComponent implements OnInit {
 			error => console.log('erro', error)
 		)
 	}
+
+	navegarNovoCadastro(): void {
+		this.router.navigate(['/cadastro-usuario']);	
+	}
 }
