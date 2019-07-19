@@ -12,18 +12,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './modules/area-de=trabalho/login/login.component';
-import { ListaAtividadesComponent } from './modules/lista-atividades/lista-atividades.component';
-import { AtividadeItemListComponent } from './modules/atividade-item-list/atividade-item-list.component';
-import { AtividadeComponent } from './modules/atividade/atividade.component';
 import { EnviroumentModule } from './modules/enviroument/enviroument.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LoginComponent,
-		ListaAtividadesComponent,
-		AtividadeItemListComponent,
-		AtividadeComponent
 	],
 	imports: [
 		BrowserModule,
