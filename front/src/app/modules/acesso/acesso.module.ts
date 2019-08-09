@@ -4,6 +4,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { Auth } from 'src/app/core/security/auth.service';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,9 @@ import { NgModule } from '@angular/core';
         MatInputModule,
         MatCheckboxModule,
         FormsModule,
+    ],
+    providers: [
+        Auth
     ]
 })
 export class AcessoModule { }

@@ -1,30 +1,24 @@
+import { LocalStorageService } from './../local-storage.service';
 import { environment } from './../../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
-const httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
-    })
-};
-
 @Injectable({
     providedIn: 'root'
 })
-export class AbstractService<T> {
+export abstract class AbstractService<T> {
     private HOST_API = environment.hostApi;
     private URI: string;
 
     constructor(public http: HttpClient,
-        private uri) {
-        this.URI = uri;
+                public uri,
+                public localStorageService: LocalStorageService) {
+                this.URI = uri;
     }
 
     save(objeto: T): Observable<T> {
-        return this.http.post<T>(this.getUrl(), objeto, httpOptions);
+        return this.http.post<T>(this.getUrl(), objeto, this.getHttpOptions());
     }
 
     getById(id: any): Observable<T> {
@@ -36,26 +30,36 @@ export class AbstractService<T> {
     }
 
     deleteById(id: string): Observable<T> {
-		return this.httpDelete(`/${id}`);
+        return this.httpDelete(`/${id}`);
     }
 
     httpGet(path: string): Observable<T> {
-        return this.http.get<T>(this.getUrl() + path, httpOptions);
+        return this.http.get<T>(this.getUrl() + path, this.getHttpOptions());
     }
 
     httpPost(objeto: T, path: string): Observable<T> {
-        return this.http.post<T>(this.getUrl() + path, objeto, httpOptions);
+        return this.http.post<T>(this.getUrl() + path, objeto, this.getHttpOptions());
     }
 
     httpPut(objeto: T, path: string): Observable<T> {
-        return this.http.put<T>(this.getUrl() + path, objeto, httpOptions);
+        return this.http.put<T>(this.getUrl() + path, objeto, this.getHttpOptions());
     }
 
     httpDelete(path: string): Observable<T> {
-        return this.http.delete<T>(`${this.getUrl()}${path} `  + path, httpOptions);
+        return this.http.delete<T>(`${this.getUrl()}${path} ` + path, this.getHttpOptions());
     }
+
     private getUrl() {
         return `${this.HOST_API}${this.URI}`;
+    }
+
+    private getHttpOptions() {
+        return {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': `${this.localStorageService.getToken()}`
+            })
+        };
     }
 
 }
