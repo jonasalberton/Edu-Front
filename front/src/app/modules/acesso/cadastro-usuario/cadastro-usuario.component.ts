@@ -1,5 +1,6 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { Usuario } from './../../../shared/models/usuario.model';
-import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/shared/service/usuario.service';
 
 @Component({
@@ -9,7 +10,9 @@ import { UsuarioService } from 'src/app/shared/service/usuario.service';
 })
 export class CadastroUsuarioComponent implements OnInit {
     usuario: Usuario = new Usuario();
+    confirmacaoPassword: any
 
+    @ViewChild('heroForm') form;
     constructor(private usuarioService: UsuarioService) { }
 
     ngOnInit() {
@@ -23,4 +26,9 @@ export class CadastroUsuarioComponent implements OnInit {
         )
     }
 
+    confirmarPassword(confirmacaoPassword: string): void {
+        if(this.usuario.password !== confirmacaoPassword) {
+            this.form.controls['confirmacao'].setErrors({'incorrect': true});
+        }
+    }
 }

@@ -16,12 +16,14 @@
 			</mat-form-field>
 
 			<mat-form-field>
-				<input matInput color="primary" placeholder="Confirmar senha" name="confirmacao"  required type="password">
+				<input matInput color="primary" placeholder="Confirmar senha" name="confirmacao"  required type="password"
+					   [ngModel]="confirmacaoPassword" (ngModelChange)="confirmarPassword($event)">
+					   <mat-error>As senhas devem ser compativeis</mat-error>
 			</mat-form-field>
 
-			<mat-checkbox color="primary" class="checkbox" >Concordo com os <a target="blank" href="http://www.facebook.com.br">Termos</a></mat-checkbox>
+			<mat-checkbox color="primary" class="checkbox"  >Concordo com os <a target="blank" href="http://www.facebook.com.br">Termos</a></mat-checkbox>
 
-			<button class="botao-entrar" mat-raised-button color="primary" type="submit">Cadastrar</button>
+			<button class="botao-entrar" mat-raised-button color="primary" type="submit" [disabled]="heroForm.invalid">Cadastrar</button>
 		</form>
 	</div>
 </div>
