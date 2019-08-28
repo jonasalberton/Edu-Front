@@ -3,7 +3,4 @@ export class Usuario {
     nome: string;
     username: string;
     password: string;
-    email: string;
-    senha: string;
-    cpf: string;
 }

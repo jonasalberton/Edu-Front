@@ -22,11 +22,7 @@ export class LoginComponent implements OnInit {
 		this.authService.login(this.usuario.email, this.usuario.senha)
 		.subscribe(
 			usuario => {
-				if(usuario !== null) {
-					this.router.navigate(['/app']);
-				} else {
-					alert('Senha errada');
-				}
+				if(!!usuario) return this.router.navigate(['/app']);
 			},
 			error => console.log('erro', error)
 		)

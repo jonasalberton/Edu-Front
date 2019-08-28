@@ -1,7 +1,9 @@
+import { Usuario } from './../models/usuario.model';
 import { Injectable } from '@angular/core';
 
 enum KeyLocalStorage {
-    TOKEN = 'TOKEN'
+    TOKEN = 'TOKEN',
+    USUARIO = 'USUARIO'
 }
 
 @Injectable({
@@ -18,5 +20,13 @@ export class LocalStorageService {
 
     getToken(): string {
         return localStorage.getItem(KeyLocalStorage.TOKEN);
+    }
+
+    setUsuario(usuario: Usuario): void {
+        localStorage.setItem(KeyLocalStorage.USUARIO, JSON.stringify(usuario));
+    }
+
+    getUsuario(): Usuario {
+        return JSON.parse(localStorage.getItem(KeyLocalStorage.USUARIO));
     }
 }

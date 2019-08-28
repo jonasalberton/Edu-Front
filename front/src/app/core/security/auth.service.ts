@@ -20,8 +20,7 @@ export class Auth {
     constructor(public http: HttpClient,
         private router: Router,
         private localStorageService: LocalStorageService,
-        private usuarioService: UsuarioService
-        ) {
+        private usuarioService: UsuarioService) {
     }
 
     loggedIn() {
@@ -29,20 +28,27 @@ export class Auth {
     }
 
     login(username: string, password: string): any {
-        let body = this.getBody(username, password);
+        return new Observable(observer => {
+            this.getToken(this.getBody(username, password)).subscribe(
+                success => {
+                    this.getUsuarioByUsername(username).subscribe(
+                        usuario => {
+                            this.localStorageService.setUsuario(usuario);
+                            observer.next();
+                        }
+                    )
+                }
+            )
+        });
+    }
+
+    getToken(body: any) {
         return this.http.post<any>(`${this.HOST_API}/login`, body, httpOptions as any).pipe(
             map(response => {
-                let token =  response['headers'].get('Authorization');
+                let token = response['headers'].get('Authorization');
                 this.localStorageService.setToken(token);
-            }));
-        
-
-
-
-
-        //         this.getUsuarioByName(username);
-        //         this.localStorageService.setCurrentUser(JSON.stringify(this.jwtHelper.decodeToken(token)));
-        //     }), catchError(this.processarErros));
+            })
+        );
     }
 
     getBody(username: string, password: string) {
@@ -53,7 +59,7 @@ export class Auth {
     }
 
     getUsuarioByUsername(username: string): Observable<Usuario> {
-        return 
+        return this.usuarioService.getUsuarioByUsername(username);
     }
 
     logout() {

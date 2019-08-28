@@ -16,6 +16,10 @@ export class UsuarioService extends AbstractService<Usuario>{
 	}
 
 	getUsuarioByUsername(username): Observable<Usuario> {
-		return this.httpGet(`?username=${username}`);
+		return this.httpGet(`/${username}`);
+	}
+
+	casdastrarNovoUsuario(usuario: Usuario): Observable<Usuario> {
+		return this.httpPost(usuario, '');
 	}
 }
