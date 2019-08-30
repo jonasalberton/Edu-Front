@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Auth } from 'src/app/core/security/auth.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { Auth } from 'src/app/core/security/auth.service';
 	styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+	@Output() menuToggle: EventEmitter<any> = new EventEmitter();
 
 	constructor(private authService: Auth) { }
 
@@ -15,6 +16,10 @@ export class ToolbarComponent implements OnInit {
 
 	doLogout(): void {
 		this.authService.logout();
+	}
+
+	menuClicked(): void {
+		this.menuToggle.emit();
 	}
 
 }

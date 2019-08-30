@@ -1,1 +1,10 @@
-<app-toolbar></app-toolbar>
+<div class="app-sidenav-container">
+    <div class="app-sidenav" [ngClass]="{'app-sidenav-close': status}">
+        <!-- <app-menu-principal></app-menu-principal> -->
+    </div>
+    <div [ngClass]="{'backdrop': !status}" (click)="changeClassSidenav()"></div>
+
+    <app-toolbar (menuToggle)="changeClassSidenav()"></app-toolbar>
+    
+   
+</div>
