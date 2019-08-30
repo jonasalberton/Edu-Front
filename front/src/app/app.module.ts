@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AcessoModule } from './modules/acesso/acesso.module';
+import { AuthGuard } from './core/security/auth.guard';
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,9 @@ import { AcessoModule } from './modules/acesso/acesso.module';
 		AcessoModule,
 		AppContainerModule
 	],
-	providers: [],
+	providers: [
+		AuthGuard
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

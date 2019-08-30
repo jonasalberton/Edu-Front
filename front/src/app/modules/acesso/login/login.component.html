@@ -4,14 +4,14 @@
         <label class="menssagem-fazer-login">Faça o login para continuar</label>
         <form (ngSubmit)="onSubmit()" #heroForm="ngForm" autocomplete="off" class="form">
             <mat-form-field  color="primary" >
-                <input matInput placeholder="email" name="email"  [(ngModel)]="usuario.email" required type="email">
+                <input matInput placeholder="email" name="email"  [(ngModel)]="usuario.username" required type="email">
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput  color="primary" placeholder="senha" name="senha" [(ngModel)]="usuario.senha" required type="password">
+                <input matInput  color="primary" placeholder="senha" name="senha" [(ngModel)]="usuario.password" required type="password">
             </mat-form-field>
 
-            <button class="botao-entrar" mat-raised-button color="primary" type="submit">Entrar</button>
+            <button class="botao-entrar" mat-raised-button color="primary" type="submit" [disabled]="heroForm.invalid">Entrar</button>
         </form> 
         <button mat-raised-button  type="button" (click)="navegarNovoCadastro()">Cadastre-se gratuitamente</button>
     </div>

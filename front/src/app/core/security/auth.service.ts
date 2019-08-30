@@ -24,7 +24,7 @@ export class Auth {
     }
 
     loggedIn() {
-        return tokenNotExpired();
+        return tokenNotExpired('TOKEN');
     }
 
     login(username: string, password: string): any {
@@ -34,10 +34,11 @@ export class Auth {
                     this.getUsuarioByUsername(username).subscribe(
                         usuario => {
                             this.localStorageService.setUsuario(usuario);
-                            observer.next();
+                            observer.next(usuario);
                         }
                     )
-                }
+                },
+                error => observer.error(error)
             )
         });
     }
@@ -63,7 +64,6 @@ export class Auth {
     }
 
     logout() {
-
     }
 
 }
