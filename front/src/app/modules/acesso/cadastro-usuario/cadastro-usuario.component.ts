@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { Usuario } from './../../../shared/models/usuario.model';
 import { UsuarioService } from 'src/app/shared/service/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-cadastro-usuario',
@@ -13,16 +14,16 @@ export class CadastroUsuarioComponent implements OnInit {
     confirmacaoPassword: any
 
     @ViewChild('heroForm') form;
-    constructor(private usuarioService: UsuarioService) { }
+    constructor(private usuarioService: UsuarioService,
+                private router: Router) { }
 
     ngOnInit() {
     }
 
     onSubmit() {
         this.usuarioService.casdastrarNovoUsuario(this.usuario).subscribe(
-            success => {
-                console.log('Deu certo porra!', success);
-            }
+            success => this.router.navigate(['login']),
+            error => alert('Tratar erro!')
         )
     }
 

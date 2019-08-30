@@ -22,6 +22,10 @@ export class LocalStorageService {
         return localStorage.getItem(KeyLocalStorage.TOKEN);
     }
 
+    removeToken(): void {
+      localStorage.removeItem(KeyLocalStorage.TOKEN);
+    }
+
     setUsuario(usuario: Usuario): void {
         localStorage.setItem(KeyLocalStorage.USUARIO, JSON.stringify(usuario));
     }
@@ -29,4 +33,8 @@ export class LocalStorageService {
     getUsuario(): Usuario {
         return JSON.parse(localStorage.getItem(KeyLocalStorage.USUARIO));
     }
+
+    removeUsuario(): void {
+        localStorage.removeItem(KeyLocalStorage.USUARIO);
+      }
 }

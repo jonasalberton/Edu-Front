@@ -64,6 +64,9 @@ export class Auth {
     }
 
     logout() {
+        this.localStorageService.removeToken();
+        this.localStorageService.removeUsuario();
+        this.router.navigate(['login']);
     }
 
 }
