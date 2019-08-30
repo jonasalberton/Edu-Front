@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AcessoModule } from './modules/acesso/acesso.module';
 import { AuthGuard } from './core/security/auth.guard';
+import { UsuarioModule } from './modules/usuario/usuario.module';
 
 @NgModule({
 	declarations: [
@@ -21,7 +22,8 @@ import { AuthGuard } from './core/security/auth.guard';
 		CommonModule,
 		HttpClientModule,
 		AcessoModule,
-		AppContainerModule
+		AppContainerModule,
+		UsuarioModule
 	],
 	providers: [
 		AuthGuard

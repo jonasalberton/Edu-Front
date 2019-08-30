@@ -7,18 +7,20 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppContainerComponent } from './app-container/app-container.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MenuComponent } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
         AppContainerComponent,
         ToolbarComponent,
-        MenuComponent
+        MenuComponent,
     ],
     imports: [
         MatButtonModule,
         MatIconModule,
         CommonModule,
-        MatMenuModule
+        MatMenuModule,
+        RouterModule
     ]
 })
 export class AppContainerModule {}

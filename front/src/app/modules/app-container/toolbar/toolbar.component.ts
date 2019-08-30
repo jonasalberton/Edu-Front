@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Auth } from 'src/app/core/security/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-toolbar',
@@ -9,7 +10,8 @@ import { Auth } from 'src/app/core/security/auth.service';
 export class ToolbarComponent implements OnInit {
 	@Output() menuToggle: EventEmitter<any> = new EventEmitter();
 
-	constructor(private authService: Auth) { }
+	constructor(private authService: Auth,
+				private router: Router) { }
 
 	ngOnInit() {
 	}
@@ -20,6 +22,10 @@ export class ToolbarComponent implements OnInit {
 
 	menuClicked(): void {
 		this.menuToggle.emit();
+	}
+
+	abrirConfiguracoes(): void {
+		this.router.navigate(['app/configuracoes']);
 	}
 
 }

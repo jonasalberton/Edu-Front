@@ -4,7 +4,10 @@
     </div>
     <div [ngClass]="{'backdrop': !status}" (click)="changeClassSidenav()"></div>
 
-    <app-toolbar (menuToggle)="changeClassSidenav()"></app-toolbar>
-    
-   
+    <div class="app-container" >
+        <app-toolbar (menuToggle)="changeClassSidenav()"></app-toolbar>
+        <div class="app-container">
+            <router-outlet></router-outlet> 
+        </div>
+    </div>
 </div>
