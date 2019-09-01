@@ -21,6 +21,8 @@
     display: flex;
     flex-flow: column;
     align-self: center;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .card {
