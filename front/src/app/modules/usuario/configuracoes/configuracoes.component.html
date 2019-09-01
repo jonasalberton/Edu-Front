@@ -1,3 +1,21 @@
-<p>
-  configuracoes works!
-</p>
+<div class="container-configuracoes">
+    <mat-card  class="card">
+        <div class="list">
+            <h4 class="titulo">Meus Dados</h4>
+            <img class="user-logo" src="../../../../assets/images/user_logo.jpeg">
+
+            <form (ngSubmit)="onSubmit()" #heroForm="ngForm" autocomplete="off" class="list">
+                <mat-form-field  color="primary" >
+                    <input matInput placeholder="nome" name="nome"  [(ngModel)]="usuario.nome" required >
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <input matInput color="primary" placeholder="email" name="email" 
+                    [(ngModel)]="usuario.username" required type="email" [disabled]="true">
+                </mat-form-field>
+    
+                <button style="width: 100px" mat-raised-button color="primary" type="submit" [disabled]="heroForm.invalid">Atualizar</button>
+            </form> 
+        </div>
+    </mat-card>
+</div>
