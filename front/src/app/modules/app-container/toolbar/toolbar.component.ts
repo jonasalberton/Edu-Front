@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
 	templateUrl: './toolbar.component.html',
 	styleUrls: ['./toolbar.component.css']
 })
+
 export class ToolbarComponent implements OnInit {
 	@Output() menuToggle: EventEmitter<any> = new EventEmitter();
-
+	titulo: string = 'Edu';
 	constructor(private authService: Auth,
-				private router: Router) { }
+				private router: Router) {
+				 }
 
 	ngOnInit() {
 	}
@@ -27,5 +29,4 @@ export class ToolbarComponent implements OnInit {
 	abrirConfiguracoes(): void {
 		this.router.navigate(['app/configuracoes']);
 	}
-
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         component: AppContainerComponent,
         children: [
-            {path: 'configuracoes', component: ConfiguracoesComponent}
+            {path: 'configuracoes', component: ConfiguracoesComponent, data: {titulo: 'Configurações'}}
         ]
         
     },
