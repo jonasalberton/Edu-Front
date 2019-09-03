@@ -1,8 +1,10 @@
+import { Usuario } from './usuario.model';
+
 export class Atividade {
     id: any;
     nome: string;
-    autor: string;
-    avaliacao: string;
+    autor: Usuario;
+    avaliacao: number;
     descricao: string;
     preview: string;
 }

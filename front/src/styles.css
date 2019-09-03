@@ -24,3 +24,17 @@ html, body {
 form {
     font-size: 1.05rem;
 }
+
+
+.container-lista {
+    width: 100%;
+}
+
+@media screen and (min-width: 870px) {
+    .container-lista {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        max-width: 1200px;
+    }
+}
