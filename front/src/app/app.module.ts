@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AcessoModule } from './modules/acesso/acesso.module';
 import { AuthGuard } from './core/security/auth.guard';
 import { UsuarioModule } from './modules/usuario/usuario.module';
+import { AtividadeModule } from './modules/atividade/atividade.module';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
 		HttpClientModule,
 		AcessoModule,
 		AppContainerModule,
-		UsuarioModule
+		UsuarioModule,
+		AtividadeModule
 	],
 	providers: [
 		AuthGuard

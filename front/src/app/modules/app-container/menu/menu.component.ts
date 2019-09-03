@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
 	}
 
 	createItemsMenu(): void {
-		this.itemsMenu.push(new ItemMenu('Atividades','atividades','app/atividades'));
+		this.itemsMenu.push(new ItemMenu('Atividades','atividades','app/lista-atividades'));
 	}
 
 	navegar(rota: string): void {

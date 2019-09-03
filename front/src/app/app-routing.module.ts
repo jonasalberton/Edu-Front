@@ -6,6 +6,7 @@ import { CadastroUsuarioComponent } from './modules/acesso/cadastro-usuario/cada
 import { AppContainerComponent } from './modules/app-container/app-container/app-container.component';
 import { AuthGuard } from './core/security/auth.guard';
 import { ConfiguracoesComponent } from './modules/usuario/configuracoes/configuracoes.component';
+import { ListaAtividadesComponent } from './modules/atividade/lista-atividades/lista-atividades.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         component: AppContainerComponent,
         children: [
-            {path: 'configuracoes', component: ConfiguracoesComponent, data: {titulo: 'Configurações'}}
+            {path: 'configuracoes', component: ConfiguracoesComponent, data: {titulo: 'Configurações'}},
+            {path: 'lista-atividades', component: ListaAtividadesComponent, data: {titulo: 'Ativiades'}},
         ]
         
     },
