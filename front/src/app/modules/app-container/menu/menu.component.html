@@ -1,0 +1,8 @@
+<div class="container-menu">
+    <div class="menu-item" *ngFor=" let item of itemsMenu" (click)="navegar(item.rota)">
+        <button mat-icon-button disableRipple >
+            <mat-icon svgIcon="{{item.icone}}"></mat-icon>
+        </button>
+        <label class="nome-item">{{item.nome}}</label>
+    </div>
+</div>

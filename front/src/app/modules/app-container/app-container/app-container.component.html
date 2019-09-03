@@ -1,6 +1,6 @@
 <div class="app-sidenav-container">
     <div class="app-sidenav" [ngClass]="{'app-sidenav-close': status}">
-        <!-- <app-menu-principal></app-menu-principal> -->
+        <app-menu (itemSelected)="changeClassSidenav()"></app-menu>
     </div>
     <div [ngClass]="{'backdrop': !status}" (click)="changeClassSidenav()"></div>
 

@@ -1,0 +1,25 @@
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.container-menu {
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+}
+
+.menu-item {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #0000000d;
+}
+
+.nome-item {
+    pointer-events: none;
+}

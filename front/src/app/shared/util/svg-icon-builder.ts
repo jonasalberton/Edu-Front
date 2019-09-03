@@ -5,6 +5,7 @@ import { Inject } from '@angular/core';
 
 export class SvgIconBuilder {
     constructor(@Inject( MatIconRegistry) iconReg: MatIconRegistry, @Inject(DomSanitizer) sanitizer: DomSanitizer ) {
+        iconReg.addSvgIcon('atividades', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/atividades.svg'))
         iconReg.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/menu.svg'))
         iconReg.addSvgIcon('certificados', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/certificados.svg'))
         iconReg.addSvgIcon('account', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/account.svg'))
