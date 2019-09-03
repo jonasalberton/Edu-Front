@@ -10,10 +10,16 @@
     align-items: center;
     padding: 0px 15px;
     box-shadow: 1px 2px 9px grey;
+    z-index: 0;
 }
 
 .button-exit {
     display: flex;
     position: absolute;
     right: 0;
+}
+
+.titulo-rota {
+    font-size: 24px;
+    padding-top: 4px;
 }
