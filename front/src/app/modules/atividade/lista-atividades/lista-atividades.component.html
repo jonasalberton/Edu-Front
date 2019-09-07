@@ -2,7 +2,11 @@
     <h3>Atividades Disponiveis</h3>
     <div class="lista">
         <div *ngFor=" let atividade of atividades" class="atividade" (click)="navegarAtividade(atividade)">
-            {{atividade.nome}}
+            <img class="image" src="https://img.olhardigital.com.br/uploads/acervo_imagens/2019/03/r16x9/20190322051919_1200_675_-_codigo_de_programacao.jpg">
+            <div class="container-descricao">
+                <label class="titulo">{{atividade.nome}}</label>
+                <div class="descricao">{{atividade.descricao}}</div>
+            </div>
         </div>
     </div>
 </div>
