@@ -1,7 +1,7 @@
 <div class="container-lista">
     <h3>Atividades Disponiveis</h3>
     <div class="lista">
-        <div *ngFor=" let atividade of atividades" class="atividade">
+        <div *ngFor=" let atividade of atividades" class="atividade" (click)="navegarAtividade(atividade)">
             {{atividade.nome}}
         </div>
     </div>

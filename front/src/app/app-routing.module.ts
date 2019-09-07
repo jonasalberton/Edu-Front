@@ -7,6 +7,7 @@ import { AppContainerComponent } from './modules/app-container/app-container/app
 import { AuthGuard } from './core/security/auth.guard';
 import { ConfiguracoesComponent } from './modules/usuario/configuracoes/configuracoes.component';
 import { ListaAtividadesComponent } from './modules/atividade/lista-atividades/lista-atividades.component';
+import { AtividadeComponent } from './modules/atividade/atividade/atividade.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
         children: [
             {path: 'configuracoes', component: ConfiguracoesComponent, data: {titulo: 'Configurações'}},
             {path: 'lista-atividades', component: ListaAtividadesComponent, data: {titulo: 'Ativiades'}},
+            {path: 'atividade', component: AtividadeComponent, data: {titulo: 'Ativiade'}},
         ]
         
     },
