@@ -8,6 +8,7 @@ import { AuthGuard } from './core/security/auth.guard';
 import { ConfiguracoesComponent } from './modules/usuario/configuracoes/configuracoes.component';
 import { ListaAtividadesComponent } from './modules/atividade/lista-atividades/lista-atividades.component';
 import { AtividadeComponent } from './modules/atividade/atividade/atividade.component';
+import { ListaCertificadosComponent } from './modules/atividade/lista-certificados/lista-certificados.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
             {path: 'configuracoes', component: ConfiguracoesComponent, data: {titulo: 'Configurações'}},
             {path: 'lista-atividades', component: ListaAtividadesComponent, data: {titulo: 'Ativiades'}},
             {path: 'atividade', component: AtividadeComponent, data: {titulo: 'Ativiade'}},
+            {path: 'lista-certificados', component: ListaCertificadosComponent, data: {titulo: 'Certificados'}},
         ]
         
     },
