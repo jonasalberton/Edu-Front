@@ -64,9 +64,13 @@ export class Auth {
     }
 
     logout() {
+        this.removerDadosLocalStorage();
+        this.router.navigate(['login']);
+    }
+    
+    removerDadosLocalStorage(): void {
         this.localStorageService.removeToken();
         this.localStorageService.removeUsuario();
-        this.router.navigate(['login']);
     }
 
 }

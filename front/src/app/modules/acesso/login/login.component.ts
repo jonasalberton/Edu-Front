@@ -17,12 +17,13 @@ export class LoginComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.verificarUsuarioLogado();
 	}
 
 	onSubmit() {
 		this.authService.login(this.usuario.username, this.usuario.password).subscribe(
 			user => {
-				if (!!user) return this.router.navigate(['/app']);
+				if (!!user) return this.navegarParaAppContainer();
 			},
 			error => alert("Dados incorretos")
 		)
@@ -33,6 +34,14 @@ export class LoginComponent implements OnInit {
 	}
 
 	navegarParaAppContainer(): void {
-		this.router.navigate(['/app']);
+		this.router.navigate(['/app/lista-atividades']);
+	}
+
+	verificarUsuarioLogado(): void {
+		if(this.authService.loggedIn()) {
+			this.navegarParaAppContainer();
+		} else {
+			this.authService.removerDadosLocalStorage();
+		}
 	}
 }

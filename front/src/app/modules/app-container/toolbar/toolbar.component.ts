@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Auth } from 'src/app/core/security/auth.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/shared/service/local-storage.service';
 
 @Component({
 	selector: 'app-toolbar',
@@ -11,8 +12,12 @@ import { Router } from '@angular/router';
 export class ToolbarComponent implements OnInit {
 	@Output() menuToggle: EventEmitter<any> = new EventEmitter();
 	titulo: string = 'Edu';
+	nomeUsuario: string;
+
 	constructor(private authService: Auth,
-				private router: Router) {
+				private router: Router,
+				private localStorageService: LocalStorageService) {
+				this.getNomeUsuario()
 				 }
 
 	ngOnInit() {
@@ -28,5 +33,10 @@ export class ToolbarComponent implements OnInit {
 
 	abrirConfiguracoes(): void {
 		this.router.navigate(['app/configuracoes']);
+	}
+
+	getNomeUsuario(): void {
+		const nome = this.localStorageService.getUsuario().nome;
+		this.nomeUsuario = nome.substr(0, nome.indexOf(' '));
 	}
 }
