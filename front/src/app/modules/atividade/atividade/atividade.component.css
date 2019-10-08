@@ -55,7 +55,6 @@
 .container-aulas {
     width: 100%;
     height: 600px;
-    background-color: pink;
 }
 
 .titulo {
@@ -64,7 +63,6 @@
 
 .nota > mat-icon {
     width: 18px;
-    color: #ffd311;
 }
 
 .criador {

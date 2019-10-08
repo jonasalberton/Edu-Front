@@ -5,6 +5,7 @@ import { ListaAtividadesComponent } from './lista-atividades/lista-atividades.co
 import { AtividadeComponent } from './atividade/atividade.component';
 import { MatCardModule, MatIconModule } from '@angular/material';
 import { ListaCertificadosComponent } from './lista-certificados/lista-certificados.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
 	declarations: [
@@ -16,6 +17,7 @@ import { ListaCertificadosComponent } from './lista-certificados/lista-certifica
 		CommonModule,
 		MatCardModule,
 		MatIconModule,
+		MatExpansionModule
 	]
 })
 export class AtividadeModule { }
