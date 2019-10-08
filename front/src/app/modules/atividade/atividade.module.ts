@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ListaAtividadesComponent } from './lista-atividades/lista-atividades.component';
 import { AtividadeComponent } from './atividade/atividade.component';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatIconModule } from '@angular/material';
 import { ListaCertificadosComponent } from './lista-certificados/lista-certificados.component';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { ListaCertificadosComponent } from './lista-certificados/lista-certifica
 	imports: [
 		CommonModule,
 		MatCardModule,
+		MatIconModule,
 	]
 })
 export class AtividadeModule { }

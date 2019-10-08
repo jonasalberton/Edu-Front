@@ -13,6 +13,7 @@ export class SvgIconBuilder {
         iconReg.addSvgIcon('playlist', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/playlist.svg'))
         iconReg.addSvgIcon('exit', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/exit.svg'))
         iconReg.addSvgIcon('person', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/person.svg'))
+        iconReg.addSvgIcon('estrela', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/estrela.svg'))
         iconReg.addSvgIcon('configuracoes', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/configuracoes.svg'));
     }
 }

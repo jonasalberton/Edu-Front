@@ -37,6 +37,7 @@ export class ToolbarComponent implements OnInit {
 
 	getNomeUsuario(): void {
 		const nome = this.localStorageService.getUsuario().nome;
-		this.nomeUsuario = nome.substr(0, nome.indexOf(' '));
+		const index = nome.indexOf(' ');
+		this.nomeUsuario = index >=0  ? nome.substr(0, index) : nome;
 	}
 }
