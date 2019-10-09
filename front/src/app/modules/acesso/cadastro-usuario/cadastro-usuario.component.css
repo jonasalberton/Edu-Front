@@ -17,6 +17,8 @@
     align-items: center;
     justify-content: center;
     flex-flow: column;
+    border-radius: 10px;
+    box-shadow: 0px 7px 20px 0px #000000d4;
 }
 
 .menssagem-fazer-login {

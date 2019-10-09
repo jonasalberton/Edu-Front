@@ -16,6 +16,7 @@
 .card-atividade {
     width: 80%;
     max-width: 1500px;;
+    min-height: 900px;
     margin: auto;
     margin-top: 30px;
     display: flex;
@@ -48,13 +49,12 @@
 .info {
     width: calc(50% - 30px);
     padding: 0 15px 15px 15px;
-    height: 500px;
     color: #676a6c;
 }
 
 .container-aulas {
     width: 100%;
-    height: 600px;
+    margin-top: 30px;
 }
 
 .titulo {
@@ -63,6 +63,7 @@
 
 .nota > mat-icon {
     width: 18px;
+    color: #ffb800;
 }
 
 .criador {
@@ -73,6 +74,23 @@
 .descricao {
     padding-left: 13px;
     text-align: justify;
+}
+
+.item-aula {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #dedede;
+    align-items: center;
+}
+
+.item-aula mat-icon {
+    cursor: pointer;
+}
+
+::ng-deep .mat-expansion-panel-header {
+    background-color: rgba(244, 244, 244, 0.43)!important;
+    border-bottom: 1px solid #adadad;
 }
 
 @media screen and (max-width: 870px) {
@@ -90,7 +108,8 @@
     }
 
     .info {
-        width: calc(100% - 30px);
+        width: calc(100% - 23px);
+        padding: 0 15px 0 7px;
         margin-top: 30px;
     }
 }
