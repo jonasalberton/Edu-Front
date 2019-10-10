@@ -6,12 +6,14 @@ import { AtividadeComponent } from './atividade/atividade.component';
 import { MatCardModule, MatIconModule } from '@angular/material';
 import { ListaCertificadosComponent } from './lista-certificados/lista-certificados.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
 	declarations: [
 		ListaAtividadesComponent,
 		AtividadeComponent,
 		ListaCertificadosComponent,
+		PlayerComponent,
 	],
 	imports: [
 		CommonModule,

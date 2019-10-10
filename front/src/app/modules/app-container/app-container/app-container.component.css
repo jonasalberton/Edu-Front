@@ -22,7 +22,6 @@
     overflow-y: auto;
     background-color: white;
     transition: .3s;
-    box-shadow: -1px 0px 15px 0px grey;
     z-index: 10;
 }
 

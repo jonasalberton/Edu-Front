@@ -82,6 +82,7 @@
     flex-direction: row;
     border-bottom: 1px solid #dedede;
     align-items: center;
+    cursor: pointer;
 }
 
 .item-aula mat-icon {

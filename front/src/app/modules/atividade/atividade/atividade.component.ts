@@ -9,6 +9,7 @@ import { Aula } from 'src/app/shared/models/aula.model';
 })
 export class AtividadeComponent implements OnInit {
 	capitulos: Array<Capitulo> = [];
+	visualizandoPlayer = false;
 	constructor() { }
 
 	ngOnInit() {
@@ -44,4 +45,7 @@ export class AtividadeComponent implements OnInit {
 		this.capitulos.push(capitulo2);
 	}
 
+	visualizarPlayer(): void {
+		this.visualizandoPlayer = true;
+	}
 }
