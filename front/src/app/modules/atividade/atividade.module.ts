@@ -7,6 +7,10 @@ import { MatCardModule, MatIconModule } from '@angular/material';
 import { ListaCertificadosComponent } from './lista-certificados/lista-certificados.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PlayerComponent } from './player/player.component';
+import { MinhasAtividadesComponent } from './minhas-atividades/minhas-atividades.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DialogPermissaoCriadorComponent } from './shared/dialog-permissao-criador/dialog-permissao-criador.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
 	declarations: [
@@ -14,12 +18,19 @@ import { PlayerComponent } from './player/player.component';
 		AtividadeComponent,
 		ListaCertificadosComponent,
 		PlayerComponent,
+		MinhasAtividadesComponent,
+		DialogPermissaoCriadorComponent,
 	],
 	imports: [
 		CommonModule,
 		MatCardModule,
 		MatIconModule,
-		MatExpansionModule
+		MatExpansionModule,
+		MatButtonModule,
+		MatDialogModule
+	],
+	entryComponents: [
+		DialogPermissaoCriadorComponent
 	]
 })
 export class AtividadeModule { }

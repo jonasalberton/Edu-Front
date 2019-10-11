@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
 
 	createItemsMenu(): void {
 		this.itemsMenu.push(new ItemMenu('Atividades','atividades','app/lista-atividades'));
-		this.itemsMenu.push(new ItemMenu('Minhas Atividades','minhas_atividades','app/lista-atividades'));
+		this.itemsMenu.push(new ItemMenu('Minhas Atividades','minhas_atividades','app/minhas-atividades'));
 		this.itemsMenu.push(new ItemMenu('Certificados','certificados','app/lista-certificados'));
 	}
 
