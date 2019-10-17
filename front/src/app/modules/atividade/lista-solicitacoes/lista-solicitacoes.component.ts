@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SolicitacaoService } from 'src/app/shared/service/solicitacao.service';
-import { Solicitacao } from 'src/app/shared/models/solicitacao.model';
+import { Solicitacao, TipoSolicitacao } from 'src/app/shared/models/solicitacao.model';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -25,5 +25,9 @@ export class ListaSolicitacoesComponent implements OnInit {
                 this.solicitacoes = _solicitacoes;
             }
         )
+    }
+
+    getIconByTiposolicitacao(solicitacao: Solicitacao): string {
+        return solicitacao.tipoSolicitacao === TipoSolicitacao.SOLICITACAO_CRIADOR ? 'criador' : '';
     }
 }
