@@ -2,6 +2,12 @@ import { Usuario } from './usuario.model';
 
 export class Solicitacao {
     id: number;
-    nome: string;
+    tipoSolicitacao: TipoSolicitacao;
+    descricao: string;
     solicitante: Usuario;
+}
+
+export enum TipoSolicitacao {
+    SOLICITACAO_CRIADOR = 'SOLICITACAO_CRIADOR',
+    SOLICITACAO_PUBLICACAO = 'SOLICITACAO_PUBLICACAO' 
 }
