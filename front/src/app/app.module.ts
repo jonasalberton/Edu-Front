@@ -11,6 +11,7 @@ import { AcessoModule } from './modules/acesso/acesso.module';
 import { AuthGuard } from './core/security/auth.guard';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { AtividadeModule } from './modules/atividade/atividade.module';
+import { AuthGuardAdmin } from './core/security/auth-admin.guard';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { AtividadeModule } from './modules/atividade/atividade.module';
 		AtividadeModule
 	],
 	providers: [
-		AuthGuard
+		AuthGuard,
+		AuthGuardAdmin
 	],
 	bootstrap: [AppComponent]
 })

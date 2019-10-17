@@ -28,4 +28,9 @@ export class UsuarioService extends AbstractService<Usuario>{
 		const usuario = this.localStorageService.getUsuario();
 		return usuario.permissoes.some( (p) => p.permissao === TipoPermissao.ROLE_CREATOR);
 	}
+
+	isAdmin(): boolean {
+		const usuario = this.localStorageService.getUsuario();
+		return usuario.permissoes.some( (p) => p.permissao === TipoPermissao.ROLE_ADMIN);
+	}
 }

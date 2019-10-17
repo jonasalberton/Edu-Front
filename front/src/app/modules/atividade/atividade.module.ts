@@ -11,6 +11,7 @@ import { MinhasAtividadesComponent } from './minhas-atividades/minhas-atividades
 import { MatButtonModule } from '@angular/material/button';
 import { DialogPermissaoCriadorComponent } from './shared/dialog-permissao-criador/dialog-permissao-criador.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ListaSolicitacoesComponent } from './lista-solicitacoes/lista-solicitacoes.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 		PlayerComponent,
 		MinhasAtividadesComponent,
 		DialogPermissaoCriadorComponent,
+		ListaSolicitacoesComponent,
 	],
 	imports: [
 		CommonModule,
