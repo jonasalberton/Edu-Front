@@ -33,7 +33,7 @@ import { CadastroAtividadeComponent } from './cadastro-atividade/cadastro-ativid
 		MatExpansionModule,
 		MatButtonModule,
 		MatDialogModule,
-		MatMenuModule
+		MatMenuModule,
 	],
 	entryComponents: [
 		DialogPermissaoCriadorComponent

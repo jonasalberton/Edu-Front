@@ -1,3 +1,9 @@
-<p>
-  cadastro-atividade works!
-</p>
+<mat-card class="card-cadastro">
+	<h3>Cadastro Atividade</h3>
+
+	<div class="image-upload" [FileUploader] [accept]="'image/x-png,image/gif,image/jpeg'">
+		<mat-icon class="image-icon" svgIcon="imagem"></mat-icon>
+		<span>click para selecionar seu wallpaper</span>
+		<span>sugestão de 25x250</span>
+	</div>
+</mat-card>

@@ -7,6 +7,7 @@ export class SvgIconBuilder {
     constructor(@Inject( MatIconRegistry) iconReg: MatIconRegistry, @Inject(DomSanitizer) sanitizer: DomSanitizer ) {
         iconReg.addSvgIcon('atividades', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/atividades.svg'))
         iconReg.addSvgIcon('add', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/add.svg'))
+        iconReg.addSvgIcon('imagem', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/imagem.svg'))
         iconReg.addSvgIcon('filtro', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/filtro.svg'))
         iconReg.addSvgIcon('criador', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/criador.svg'))
         iconReg.addSvgIcon('solicitacoes', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/solicitacoes.svg'))

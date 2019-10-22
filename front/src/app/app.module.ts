@@ -13,10 +13,12 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
 import { AtividadeModule } from './modules/atividade/atividade.module';
 import { AuthGuardAdmin } from './core/security/auth-admin.guard';
 import { MatSnackBarModule } from '@angular/material';
+import { PdFileUploaderDirective } from './shared/directives/file-uploader.directive';
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		PdFileUploaderDirective
 	],
 	imports: [
 		BrowserModule,
