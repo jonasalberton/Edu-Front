@@ -12,6 +12,7 @@ import { ListaCertificadosComponent } from './modules/atividade/lista-certificad
 import { MinhasAtividadesComponent } from './modules/atividade/minhas-atividades/minhas-atividades.component';
 import { ListaSolicitacoesComponent } from './modules/atividade/lista-solicitacoes/lista-solicitacoes.component';
 import { AuthGuardAdmin } from './core/security/auth-admin.guard';
+import { CadastroAtividadeComponent } from './modules/atividade/cadastro-atividade/cadastro-atividade.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
             {path: 'minhas-atividades', component: MinhasAtividadesComponent, data: {titulo: 'Minhas Ativiades'}},
             {path: 'atividade', component: AtividadeComponent, data: {titulo: 'Ativiade'}},
             {path: 'lista-certificados', component: ListaCertificadosComponent, data: {titulo: 'Certificados'}},
+            {path: 'cadastro-atividade', component: CadastroAtividadeComponent, data: {titulo: 'Cadastro'}},
             {path: 'lista-solicitacoes',  canActivate: [AuthGuardAdmin], component: ListaSolicitacoesComponent, data: {titulo: 'Solicitacoes'}},
         ]
     },

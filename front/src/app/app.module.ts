@@ -12,6 +12,7 @@ import { AuthGuard } from './core/security/auth.guard';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { AtividadeModule } from './modules/atividade/atividade.module';
 import { AuthGuardAdmin } from './core/security/auth-admin.guard';
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { AuthGuardAdmin } from './core/security/auth-admin.guard';
 		AcessoModule,
 		AppContainerModule,
 		UsuarioModule,
-		AtividadeModule
+		AtividadeModule,
+		MatSnackBarModule
 	],
 	providers: [
 		AuthGuard,

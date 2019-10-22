@@ -13,6 +13,7 @@ import { DialogPermissaoCriadorComponent } from './shared/dialog-permissao-criad
 import { MatDialogModule } from '@angular/material/dialog';
 import { ListaSolicitacoesComponent } from './lista-solicitacoes/lista-solicitacoes.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { CadastroAtividadeComponent } from './cadastro-atividade/cadastro-atividade.component';
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import { MatMenuModule } from '@angular/material/menu';
 		MinhasAtividadesComponent,
 		DialogPermissaoCriadorComponent,
 		ListaSolicitacoesComponent,
+		CadastroAtividadeComponent,
 	],
 	imports: [
 		CommonModule,
