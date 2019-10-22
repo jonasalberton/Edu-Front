@@ -89,9 +89,8 @@
     cursor: pointer;
 }
 
-::ng-deep .mat-expansion-panel-header {
-    background-color: rgba(244, 244, 244, 0.43)!important;
-    border-bottom: 1px solid #adadad;
+::ng-deep .mat-expansion-panel-body {
+    border: 1px solid #dddddd
 }
 
 @media screen and (max-width: 870px) {

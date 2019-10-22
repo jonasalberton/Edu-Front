@@ -1,16 +1,40 @@
 <div class="container-div">
-    <h3 style="margin-left: 20px">Atividades Disponiveis</h3>
+    <div class="container-filtro">
+        <h3>Solicitações {{tituloFiltro}}</h3>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="filtro">
+            <mat-icon svgIcon="filtro"></mat-icon>
+        </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="setFiltro('PENDENTE')">
+                  <span >Pendentes</span>
+                </button>
+                <button mat-menu-item (click)="setFiltro('ACEITA')">
+                  <span >Aceitas</span>
+                </button>
+                <button mat-menu-item (click)="setFiltro('NEGADA')">
+                  <span >Negadas</span>
+                </button>
+              </mat-menu>
+    </div>
     <mat-accordion>
         <mat-expansion-panel *ngFor="let solicitacao of solicitacoes">
             <mat-expansion-panel-header>
                 <mat-panel-title >
                     <div class="titulo-card">
                         <mat-icon svgIcon="{{getIconByTiposolicitacao(solicitacao)}}"></mat-icon>
-                        <h4 style="margin: 0; margin-left: 20px">TESTE</h4>
+                        <h5 style="margin: 0; margin-left: 20px; width: 80px">{{solicitacao.solicitante.nome}}</h5>
+                        <h5 style="margin: 0; margin-left: 30px"> solicitado em {{solicitacao.dataSolicitacao | date:'dd/MM/yyyy'}}</h5>
                     </div>
                 </mat-panel-title>
             </mat-expansion-panel-header>
-
+                <div *ngIf="solicitacao.tipoSolicitacao == 'CRIADOR'">
+                    <h4>Deseja permitir que este usuário se torne um criador?</h4>
+                    <button mat-button>Negar</button>
+                    <button mat-button color="primary" cdkFocusInitial (click)="permitir(solicitacao)">Permitir</button>
+                </div>
+                <div *ngIf="solicitacao.tipoSolicitacao == 'PUBLICACAO'">
+                    asd
+                </div>
         </mat-expansion-panel>
     </mat-accordion>
 </div>

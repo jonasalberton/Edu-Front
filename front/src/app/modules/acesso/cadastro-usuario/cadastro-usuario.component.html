@@ -4,7 +4,7 @@
 		<label class="menssagem-fazer-login">Cadastre-se no EDU</label>
 		<form (ngSubmit)="onSubmit()" #heroForm="ngForm" autocomplete="off" class="form">
 			<mat-form-field >
-				<input matInput color="primary" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome" required type="text">
+				<input matInput color="primary" placeholder="Nome completo" name="nome" [(ngModel)]="usuario.nome" required type="text">
 			</mat-form-field>
 
 			<mat-form-field>

@@ -9,11 +9,12 @@ export class Solicitacao {
 }
 
 export enum TipoSolicitacao {
-    SOLICITACAO_CRIADOR = 'SOLICITACAO_CRIADOR',
-    SOLICITACAO_PUBLICACAO = 'SOLICITACAO_PUBLICACAO' 
+   CRIADOR = 'CRIADOR',
+   PUBLICACAO = 'PUBLICACAO'
 }
 
 export enum StatusSolicicao {
     ACEITA = 'ACEITA',
-    NEGADA = 'NEGADA'
+    NEGADA = 'NEGADA',
+    PENDENTE = 'PENDENTE'
 }

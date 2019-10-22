@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DialogPermissaoCriadorComponent } from './shared/dialog-permissao-criador/dialog-permissao-criador.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ListaSolicitacoesComponent } from './lista-solicitacoes/lista-solicitacoes.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
 	declarations: [
@@ -29,7 +30,8 @@ import { ListaSolicitacoesComponent } from './lista-solicitacoes/lista-solicitac
 		MatIconModule,
 		MatExpansionModule,
 		MatButtonModule,
-		MatDialogModule
+		MatDialogModule,
+		MatMenuModule
 	],
 	entryComponents: [
 		DialogPermissaoCriadorComponent
