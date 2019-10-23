@@ -6,7 +6,7 @@ import { FileUploaded } from '../models/file-uploaded.model';
 @Directive({
     selector: '[FileUploader]'
 })
-export class PdFileUploaderDirective implements OnInit {
+export class FileUploaderDirective implements OnInit {
     @Input() accept: string;
     @Output() whenUploaded: EventEmitter<any> = new EventEmitter<any>();
     input = (document.createElement('input'));
@@ -28,10 +28,10 @@ export class PdFileUploaderDirective implements OnInit {
         this.input.accept = this.accept;
         this.input.multiple = false;
         this.input.onchange = (event) => {
-            this.getFilesRead(event).subscribe((arrayOfFile) => {
-                this.whenUploaded.emit(arrayOfFile);
+            // this.getFilesRead(event).subscribe((arrayOfFile) => {
+                this.whenUploaded.emit(event);
                 this.input.value = '';
-            });
+            // });
         };
     }
 

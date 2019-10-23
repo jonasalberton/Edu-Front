@@ -1,10 +1,12 @@
 import { Usuario } from './usuario.model';
+import { Capitulo } from './capitulo.model';
+import { File } from './file.model';
 
 export class Atividade {
-    id: any;
-    nome: string;
-    autor: Usuario;
-    avaliacao: number;
+    id: number;
+    titulo: string;
     descricao: string;
-    preview: string;
+    criador: Usuario;
+    capitulos: Capitulo[];
+    imagem: File;
 }

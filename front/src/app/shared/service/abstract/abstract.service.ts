@@ -41,6 +41,14 @@ export abstract class AbstractService<T> {
         return this.http.post<T>(this.getUrl() + path, objeto, this.getHttpOptions());
     }
 
+    httpGetFile(path: string): Observable<T> {
+        return this.http.get<T>(this.getUrl() + path, this.getHttpOptionsFile());
+    }
+
+    httpPostFile(objeto: T, path: string): Observable<T> {
+        return this.http.post<T>(this.getUrl() + path, objeto, this.getHttpOptionsFile());
+    }
+
     httpPut(objeto: T, path: string): Observable<T> {
         return this.http.put<T>(this.getUrl() + path, objeto, this.getHttpOptions());
     }
@@ -57,6 +65,14 @@ export abstract class AbstractService<T> {
         return {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
+                'Authorization': `${this.localStorageService.getToken()}`
+            })
+        };
+    }
+
+    private getHttpOptionsFile() {
+        return {
+            headers: new HttpHeaders({
                 'Authorization': `${this.localStorageService.getToken()}`
             })
         };

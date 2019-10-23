@@ -14,6 +14,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ListaSolicitacoesComponent } from './lista-solicitacoes/lista-solicitacoes.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { CadastroAtividadeComponent } from './cadastro-atividade/cadastro-atividade.component';
+import { DirectiveModule } from 'src/app/shared/directives/directive.module';
+import { FormsModule } from '@angular/forms';
+import { FileService } from 'src/app/shared/service/file.service';
 
 @NgModule({
 	declarations: [
@@ -34,9 +37,15 @@ import { CadastroAtividadeComponent } from './cadastro-atividade/cadastro-ativid
 		MatButtonModule,
 		MatDialogModule,
 		MatMenuModule,
+		DirectiveModule,
+		FormsModule
 	],
 	entryComponents: [
 		DialogPermissaoCriadorComponent
+	],
+	providers: [
+		FileService
 	]
+	
 })
 export class AtividadeModule { }

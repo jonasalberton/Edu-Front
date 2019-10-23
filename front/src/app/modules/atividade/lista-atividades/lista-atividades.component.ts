@@ -18,18 +18,17 @@ export class ListaAtividadesComponent implements OnInit {
 
 	buildAtividadesMock(): void {
 		let atividade = new Atividade();
-		atividade.avaliacao = 50;
 		atividade.descricao = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book';
-		atividade.nome = 'Javascript';
+		atividade.titulo = 'Javascript';
 
 
 		this.atividades.push(atividade);
 		this.atividades.push({ ...atividade });
 		this.atividades.push({ ...atividade });
 		this.atividades.push({ ...atividade });
-		this.atividades.push({ ...atividade, nome: 'Typescript' });
-		this.atividades.push({ ...atividade, nome: 'Typescript' });
-		this.atividades.push({ ...atividade, nome: 'Java' });
+		this.atividades.push({ ...atividade, titulo: 'Typescript' });
+		this.atividades.push({ ...atividade, titulo: 'Typescript' });
+		this.atividades.push({ ...atividade, titulo: 'Java' });
 		this.atividades.push({ ...atividade });
 		this.atividades.push({ ...atividade });
 		this.atividades.push({ ...atividade });
