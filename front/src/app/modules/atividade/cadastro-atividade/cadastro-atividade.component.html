@@ -1,12 +1,12 @@
 <mat-card class="card-cadastro">
 	<h3>Cadastro Atividade</h3>
 
-	<div  FileUploader  (whenUploaded)="carregouImagem($event)">
+	<div FileUploader (whenUploaded)="carregouImagem($event)" class="container-flex">
 		<div *ngIf="!atividade.imagem" class="image-upload">
 			<mat-icon class="image-icon" svgIcon="imagem"></mat-icon>
-			<span>click para selecionar seu wallpaper</span>
-			<span>sugestão de 25x250</span>
+			<span>click para adicionar seu wallpaper</span>
+			<span>sugestão de 250x250</span>
 		</div>
-		<img  id="imagem">
+		<img id="imagem" class="imagem">
 	</div>
 </mat-card>

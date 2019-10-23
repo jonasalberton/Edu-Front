@@ -6,7 +6,7 @@
 
 .card-cadastro {
     width: 80%;
-    max-width: 1500px;;
+    max-width: 1000px;;
     min-height: 900px;
     margin: auto;
     margin-top: 30px;
@@ -14,10 +14,16 @@
     flex-direction: column;
 }
 
+.container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .image-upload {
     width: 100%;
-    min-height: 300px;
-    background-color: #2196F3;
+    min-height: 400px;
+    background: linear-gradient(to right, #66eaff 0%, #3399ff 100%);
     display: flex;
     border-radius: 9px;
     align-self: center;
@@ -33,4 +39,19 @@
 .image-icon {
     width: 50px;
     height: 50px;
+}
+
+.imagem {
+    max-width: 100%;
+    max-height: 400px;
+    display: flex;
+    border-radius: 9px;
+    align-self: center;
+    box-shadow: 1px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
 }
