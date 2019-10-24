@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    overflow: auto;
 }
 
 .card-cadastro {
@@ -54,4 +55,23 @@
     align-items: center;
     color: white;
     cursor: pointer;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    height: 100px;
+}
+
+.subtitulo {
+    border-bottom: 3px solid #39a2ff;
+    width: min-content;
+    white-space: nowrap;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    border: 1px solid #dddddd
 }

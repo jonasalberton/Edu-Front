@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Atividade } from 'src/app/shared/models/atividade.model';
 import { FileService } from 'src/app/shared/service/file.service';
 import { UtilService } from 'src/app/shared/util/util.service';
+import { File } from 'src/app/shared/models/file.model';
+import { Capitulo } from 'src/app/shared/models/capitulo.model';
 
 @Component({
     selector: 'app-cadastro-atividade',
@@ -26,17 +28,21 @@ export class CadastroAtividadeComponent implements OnInit {
             document.getElementById("imagem").setAttribute('src', (e.target as any).result);
         }
         reader.readAsDataURL(imagem);
-
         this.salvarImagem(imagem);
     }
 
     salvarImagem(imagem): void {
         this.fileService.save(imagem).subscribe(
             sucesso => {
+                this.atividade.imagem = new File();
                 this.atividade.imagem.id = sucesso.id;
-                console.log('sucesso', sucesso);
             },
             error => this.utilService.aviso("Erro ao fazer upload da imagem!")
         );
     }
+    
+    criarCapitulo(): void {
+        this.atividade.capitulos.push(new Capitulo());
+    }
+
 }

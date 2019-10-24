@@ -17,6 +17,7 @@ import { CadastroAtividadeComponent } from './cadastro-atividade/cadastro-ativid
 import { DirectiveModule } from 'src/app/shared/directives/directive.module';
 import { FormsModule } from '@angular/forms';
 import { FileService } from 'src/app/shared/service/file.service';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
 	declarations: [
@@ -38,7 +39,8 @@ import { FileService } from 'src/app/shared/service/file.service';
 		MatDialogModule,
 		MatMenuModule,
 		DirectiveModule,
-		FormsModule
+		FormsModule,
+		MatInputModule
 	],
 	entryComponents: [
 		DialogPermissaoCriadorComponent

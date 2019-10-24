@@ -3,6 +3,11 @@ import { Capitulo } from './capitulo.model';
 import { File } from './file.model';
 
 export class Atividade {
+
+    constructor() {
+        this.capitulos =  [];
+        this.imagem =  new File();
+    }
     id: number;
     titulo: string;
     descricao: string;
