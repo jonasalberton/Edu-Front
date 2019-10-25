@@ -20,6 +20,10 @@ import { FileService } from 'src/app/shared/service/file.service';
 import { MatInputModule } from '@angular/material/input';
 import { CadastroCapituloComponent } from './cadastro-capitulo/cadastro-capitulo.component';
 import { CadastroAulaComponent } from './cadastro-aula/cadastro-aula.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AtividadeService } from 'src/app/shared/service/atividade.service';
+import { CapituloService } from 'src/app/shared/service/capitulo.service';
+import { AulaService } from 'src/app/shared/service/aula.service';
 
 @NgModule({
 	declarations: [
@@ -44,13 +48,17 @@ import { CadastroAulaComponent } from './cadastro-aula/cadastro-aula.component';
 		MatMenuModule,
 		DirectiveModule,
 		FormsModule,
-		MatInputModule
+		MatInputModule,
+		MatProgressSpinnerModule
 	],
 	entryComponents: [
 		DialogPermissaoCriadorComponent
 	],
 	providers: [
-		FileService
+		FileService,
+		AtividadeService,
+		CapituloService,
+		AulaService
 	]
 	
 })

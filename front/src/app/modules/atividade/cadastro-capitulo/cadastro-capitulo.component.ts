@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Capitulo } from 'src/app/shared/models/capitulo.model';
+import { CapituloService } from 'src/app/shared/service/capitulo.service';
+import { UtilService } from 'src/app/shared/util/util.service';
 
 @Component({
 	selector: 'app-cadastro-capitulo',
@@ -11,7 +13,10 @@ export class CadastroCapituloComponent implements OnInit {
 	@Output() onCancelar = new EventEmitter();
 	@Output() onCriar = new EventEmitter();
 
-	constructor() { }
+	constructor(
+		private capituloService: CapituloService,
+		private utilService: UtilService
+	) { }
 
 	ngOnInit() {
 		this.buildCapitulo();
@@ -26,7 +31,14 @@ export class CadastroCapituloComponent implements OnInit {
 	}
 
 	criar(): void {
-		this.onCriar.emit(this.capitulo);
+		this.capituloService.salvar(this.capitulo).subscribe(
+			_capitulo => {
+				this.capitulo = _capitulo;
+				this.onCriar.emit(this.capitulo);
+			},
+			error => this.utilService.aviso("Erro ao salvar o capítulo")
+		)
+
 	}
 
 }

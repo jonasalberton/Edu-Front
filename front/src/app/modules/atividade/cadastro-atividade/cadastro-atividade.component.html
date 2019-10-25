@@ -1,63 +1,75 @@
 <mat-card class="card-cadastro">
-	<h3>Cadastro Atividade</h3>
-	<h4 style="margin: 0" class="subtitulo">Wallpaper</h4>
-	<hr>
-	<div FileUploader (whenUploaded)="carregouImagem($event)"  [accept]="'image/x-png,image/gif,image/jpeg'"  class="container-flex">
-		<div *ngIf="!atividade.imagem.id" class="image-upload">
-			<mat-icon class="image-icon" svgIcon="imagem"></mat-icon>
-			<span>click para adicionar seu wallpaper</span>
-			<span>sugestão de 250x250</span>
+	<form  #form="ngForm" autocomplete="off">
+		<h3>Cadastro Atividade</h3>
+		<h4  class="subtitulo">Wallpaper</h4>
+		<div FileUploader (whenUploaded)="carregouImagem($event)" [accept]="'image/x-png,image/gif,image/jpeg'"
+			class="container-flex">
+			<div *ngIf="!atividade.imagem.id" class="image-upload background">
+				<mat-icon class="image-icon" svgIcon="imagem"></mat-icon>
+				<span>click para adicionar seu wallpaper</span>
+				<span>sugestão de 250x250</span>
+			</div>
+			<img  id="imagem" class="imagem">
 		</div>
-		<img id="imagem" class="imagem">
-	</div>
 
-	<div class="list">		
-		<h4  class="subtitulo">Titulo e Descricao</h4>
-		<mat-form-field >
-			<input matInput placeholder="Título" name="titulo" [(ngModel)]="atividade.titulo">
-		</mat-form-field>
+		<div class="list">
+			<h4 class="subtitulo">Titulo e Descricao</h4>
+			<mat-form-field>
+				<input matInput placeholder="Título" name="titulo" [(ngModel)]="atividade.titulo" required>
+			</mat-form-field>
 
-		<mat-form-field >
-			<textarea matInput class="textarea" placeholder="Descrição" name="descricao" [(ngModel)]="atividade.descricao"></textarea>
-		</mat-form-field>
-	</div>
+			<mat-form-field>
+				<textarea matInput class="textarea" placeholder="Descrição" required name="descricao"
+					[(ngModel)]="atividade.descricao"></textarea>
+			</mat-form-field>
+		</div>
 
-	<div class="list">		
-		<h4  class="subtitulo">Capítulos</h4>
-		
-		<mat-accordion>
-			<mat-expansion-panel *ngFor="let capitulo of atividade.capitulos">
-				<mat-expansion-panel-header>
-					<mat-panel-title> <h4 style="margin: 0">{{capitulo.nome}}</h4></mat-panel-title>
-				</mat-expansion-panel-header>
-				
-				<div *ngFor="let aula of capitulo.aulas" class="item-aula" (click)="visualizarPlayer()">
-					<mat-icon svgIcon="reproduzir"></mat-icon>
-					<label style="margin-left: 10px;">{{aula.nome}}</label>
-				</div>
+		<div class="list">
+			<h4 class="subtitulo">Capítulos</h4>
 
-				<app-cadastro-aula>
-					
-				</app-cadastro-aula>
-				
-				
-			</mat-expansion-panel>
-		</mat-accordion>
+			<mat-accordion>
+				<mat-expansion-panel *ngFor="let capitulo of atividade.capitulos">
+					<mat-expansion-panel-header>
+						<mat-panel-title>
+							<h4 style="margin: 0">{{capitulo.nome}}</h4>
+						</mat-panel-title>
+					</mat-expansion-panel-header>
 
-		
-		
-		<app-cadastro-capitulo
-			*ngIf="cadastroCapituloVisible"
-			(onCriar)="adicionarCapitulo($event)"
-			(onCancelar)="fecharCadastroCapitulo()">
-		</app-cadastro-capitulo>
 
-		<button *ngIf="!cadastroCapituloVisible" 
-				mat-fab color="primary" 
-				style="margin-top: 20px" 
+					<div *ngFor="let aula of capitulo.aulas" class="item-aula" (click)="visualizarPlayer()">
+						<mat-icon svgIcon="reproduzir"></mat-icon>
+						<label style="margin-left: 10px;">{{aula.nome}}</label>
+					</div>
+
+
+
+					<app-cadastro-aula *ngIf="cadastroAulaVisible" (onCancelar)="fecharCadastroAula()"
+						(onCriarAula)="adicionarAula($event, capitulo)">
+					</app-cadastro-aula>
+
+					<button mat-mini-fab *ngIf="!cadastroAulaVisible" color="primary" style="margin-top: 20px"
+						(click)="criarAula()">
+						<mat-icon svgIcon="add"></mat-icon>
+					</button>
+
+				</mat-expansion-panel>
+			</mat-accordion>
+
+
+
+			<app-cadastro-capitulo *ngIf="cadastroCapituloVisible" (onCriar)="adicionarCapitulo($event)"
+				(onCancelar)="fecharCadastroCapitulo()">
+			</app-cadastro-capitulo>
+
+			<button *ngIf="!cadastroCapituloVisible" mat-fab color="primary" style="margin-top: 20px"
 				(click)="criarCapitulo()">
 				<mat-icon svgIcon="add"></mat-icon>
-		</button>
-	</div>
+			</button>
+		</div>
 
+		<div style="margin-top: 50px">
+			<button mat-flat-button color="primary" (click)="salvarAtividade()" [disabled]="form.invalid"> Salvar</button>
+		</div>
+
+	</form>
 </mat-card>

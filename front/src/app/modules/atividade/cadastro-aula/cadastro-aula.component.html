@@ -4,19 +4,21 @@
 	</mat-card-header>
 
 	<mat-card-content class="content">
-		<mat-form-field style="width: 30%">
-			<input matInput placeholder="Nome" name="nome" [(ngModel)]="aula.nome">
-		</mat-form-field>
+		<form #form="ngForm" autocomplete="off" class="form">
+			<mat-form-field style="width: 30%">
+				<input matInput placeholder="Nome" name="nome" required [(ngModel)]="aula.nome">
+			</mat-form-field>
 
-		<mat-form-field style="width: 30%">
-			<input matInput placeholder="Click para escolher um arquvio" name="file"  [(ngModel)]="aula.file.nome" FileUploader (whenUploaded)="carregouVideo($event)"  [accept]="'video/mp4,video/x-m4v,video/*'" >
-		</mat-form-field>
-
-		<!-- <div class="upload-video"></div> -->
-
+			<mat-form-field style="width: 30%; margin-left: 30px" FileUploader (whenUploaded)="carregouVideo($event)"
+				[accept]="'video/mp4,video/x-m4v,video/*'">
+				<input matInput placeholder="Click para escolher um arquvio" name="file"
+					[(ngModel)]="aula.file.fileName" required>
+			</mat-form-field>
+			<mat-spinner *ngIf="carregandoFile" [diameter]="30"></mat-spinner>
+		</form>
 	</mat-card-content>
 	<mat-card-actions style="padding: 0">
 		<button mat-button (click)="cancelar()">Cancelar</button>
-		<button mat-button color="primary" cdkFocusInitial (click)="criar()">Criar</button>
+		<button mat-button color="primary" cdkFocusInitial [disabled]="form.invalid" (click)="criar()">Criar</button>
 	</mat-card-actions>
 </mat-card>

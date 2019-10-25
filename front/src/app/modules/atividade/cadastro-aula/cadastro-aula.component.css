@@ -23,19 +23,9 @@
     font-size: 15px;
 }
 
-.upload-video {
-    width: 328px;
-    min-height: 130px;
-    background: linear-gradient(to right, #66eaff 0%, #3399ff 100%);
+.form {
+    width: 100%;
     display: flex;
-    border-radius: 9px;
-    align-self: center;
-    box-shadow: 1px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    color: white;
-    cursor: pointer;
 }

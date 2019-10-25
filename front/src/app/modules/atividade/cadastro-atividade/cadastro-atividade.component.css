@@ -75,3 +75,16 @@
 ::ng-deep .mat-expansion-panel-body {
     border: 1px solid #dddddd
 }
+
+.item-aula {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #dedede;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item-aula mat-icon {
+    cursor: pointer;
+}
