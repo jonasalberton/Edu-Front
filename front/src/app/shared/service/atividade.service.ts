@@ -18,4 +18,9 @@ export class AtividadeService extends AbstractService<Atividade>{
 		return this.httpPost(atividade, '/creator');
 	}
 
+	buscarPorUsuario(): Observable<any> {
+		const user = this.localStorageService.getUsuario();
+		return this.httpGet('');
+	}
+
 }

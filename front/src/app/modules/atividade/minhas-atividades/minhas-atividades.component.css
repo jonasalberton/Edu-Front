@@ -3,3 +3,13 @@
     right: 20px;
     bottom: 20px;
 }
+
+.container-div {
+    width: 80%;
+    margin: auto
+}
+
+.titulo-card {
+    display: flex;
+    align-items: center;
+}
