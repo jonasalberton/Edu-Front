@@ -18,6 +18,8 @@ import { DirectiveModule } from 'src/app/shared/directives/directive.module';
 import { FormsModule } from '@angular/forms';
 import { FileService } from 'src/app/shared/service/file.service';
 import { MatInputModule } from '@angular/material/input';
+import { CadastroCapituloComponent } from './cadastro-capitulo/cadastro-capitulo.component';
+import { CadastroAulaComponent } from './cadastro-aula/cadastro-aula.component';
 
 @NgModule({
 	declarations: [
@@ -29,6 +31,8 @@ import { MatInputModule } from '@angular/material/input';
 		DialogPermissaoCriadorComponent,
 		ListaSolicitacoesComponent,
 		CadastroAtividadeComponent,
+		CadastroCapituloComponent,
+		CadastroAulaComponent,
 	],
 	imports: [
 		CommonModule,

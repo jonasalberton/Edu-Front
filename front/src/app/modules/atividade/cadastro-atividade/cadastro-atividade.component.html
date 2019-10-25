@@ -15,9 +15,9 @@
 		<h4  class="subtitulo">Titulo e Descricao</h4>
 		<mat-form-field >
 			<input matInput placeholder="Título" name="titulo" [(ngModel)]="atividade.titulo">
-		 </mat-form-field>
+		</mat-form-field>
 
-		 <mat-form-field >
+		<mat-form-field >
 			<textarea matInput class="textarea" placeholder="Descrição" name="descricao" [(ngModel)]="atividade.descricao"></textarea>
 		</mat-form-field>
 	</div>
@@ -28,18 +28,36 @@
 		<mat-accordion>
 			<mat-expansion-panel *ngFor="let capitulo of atividade.capitulos">
 				<mat-expansion-panel-header>
-					<mat-panel-title> <h4 style="margin: 0">Teste</h4></mat-panel-title>
+					<mat-panel-title> <h4 style="margin: 0">{{capitulo.nome}}</h4></mat-panel-title>
 				</mat-expansion-panel-header>
+				
 				<div *ngFor="let aula of capitulo.aulas" class="item-aula" (click)="visualizarPlayer()">
 					<mat-icon svgIcon="reproduzir"></mat-icon>
 					<label style="margin-left: 10px;">{{aula.nome}}</label>
-				</div>	
+				</div>
+
+				<app-cadastro-aula>
+					
+				</app-cadastro-aula>
+				
+				
 			</mat-expansion-panel>
 		</mat-accordion>
 
-		<button mat-fab color="primary" style="margin-top: 20px" (click)="criarCapitulo()">
+		
+		
+		<app-cadastro-capitulo
+			*ngIf="cadastroCapituloVisible"
+			(onCriar)="adicionarCapitulo($event)"
+			(onCancelar)="fecharCadastroCapitulo()">
+		</app-cadastro-capitulo>
+
+		<button *ngIf="!cadastroCapituloVisible" 
+				mat-fab color="primary" 
+				style="margin-top: 20px" 
+				(click)="criarCapitulo()">
 				<mat-icon svgIcon="add"></mat-icon>
-			</button>
+		</button>
 	</div>
 
 </mat-card>

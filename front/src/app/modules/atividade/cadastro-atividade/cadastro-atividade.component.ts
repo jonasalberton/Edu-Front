@@ -12,12 +12,14 @@ import { Capitulo } from 'src/app/shared/models/capitulo.model';
 })
 export class CadastroAtividadeComponent implements OnInit {
     atividade = new Atividade();
+    cadastroCapituloVisible = false;
 
     constructor(
         private fileService: FileService,
         private utilService: UtilService) { }
 
     ngOnInit() {
+        this.atividade.capitulos.push(new Capitulo());
     }
 
     carregouImagem(files) {
@@ -42,7 +44,15 @@ export class CadastroAtividadeComponent implements OnInit {
     }
     
     criarCapitulo(): void {
-        this.atividade.capitulos.push(new Capitulo());
+        this.cadastroCapituloVisible = true;
     }
 
+    adicionarCapitulo(capitulo: Capitulo): void {
+        this.atividade.capitulos.push(capitulo);
+        this.fecharCadastroCapitulo();
+    }
+
+    fecharCadastroCapitulo(): void {
+        this.cadastroCapituloVisible = false;
+    }
 }
