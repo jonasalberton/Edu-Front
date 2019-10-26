@@ -16,5 +16,6 @@ export enum TipoSolicitacao {
 export enum StatusSolicicao {
     ACEITA = 'ACEITA',
     NEGADA = 'NEGADA',
-    PENDENTE = 'PENDENTE'
+    PENDENTE = 'PENDENTE',
+    ENVIADA_PARA_ANALISE = 'ENVIADA_PARA_ANALISE'
 }

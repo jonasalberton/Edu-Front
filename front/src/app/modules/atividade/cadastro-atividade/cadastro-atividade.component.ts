@@ -7,6 +7,8 @@ import { Capitulo } from 'src/app/shared/models/capitulo.model';
 import { Aula } from 'src/app/shared/models/aula.model';
 import { AtividadeService } from 'src/app/shared/service/atividade.service';
 import { LocalStorageService } from 'src/app/shared/service/local-storage.service';
+import { CapituloService } from 'src/app/shared/service/capitulo.service';
+import { StatusSolicicao } from 'src/app/shared/models/solicitacao.model';
 
 @Component({
     selector: 'app-cadastro-atividade',
@@ -22,10 +24,10 @@ export class CadastroAtividadeComponent implements OnInit {
         private fileService: FileService,
         private utilService: UtilService,
         private atividadeService: AtividadeService,
+        private capituloService: CapituloService,
         private localStorageService: LocalStorageService) { }
 
     ngOnInit() {
-        // this.atividade.capitulos.push(new Capitulo());
     }
 
     carregouImagem(files) {
@@ -66,7 +68,17 @@ export class CadastroAtividadeComponent implements OnInit {
         if (!capitulo.aulas) capitulo.aulas = [];
 
         capitulo.aulas.push(aula);
+        this.atualizarCapitulo(capitulo);
         this.fecharCadastroAula();
+    }
+
+    atualizarCapitulo(capitulo: Capitulo): void {
+        this.capituloService.salvar(capitulo).subscribe(
+            _capitulo => {
+                capitulo = _capitulo;
+            },
+            erro => this.utilService.aviso('Erro ao atualizar o capitulo')
+        )
     }
 
     fecharCadastroAula(): void {
@@ -79,6 +91,7 @@ export class CadastroAtividadeComponent implements OnInit {
 
     salvarAtividade(): void {
         this.setMeAsCReator();
+        this.atividade.status = StatusSolicicao.PENDENTE;
         this.atividadeService.salvar(this.atividade).subscribe(
             _atividade =>  {
                 this.utilService.aviso('Atividade salva com sucesso!');

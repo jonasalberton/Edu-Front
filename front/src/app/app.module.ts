@@ -13,6 +13,7 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
 import { AtividadeModule } from './modules/atividade/atividade.module';
 import { AuthGuardAdmin } from './core/security/auth-admin.guard';
 import { MatSnackBarModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { MatSnackBarModule } from '@angular/material';
 		AppContainerModule,
 		UsuarioModule,
 		AtividadeModule,
-		MatSnackBarModule
+		MatSnackBarModule,
+		FlexLayoutModule
 	],
 	providers: [
 		AuthGuard,

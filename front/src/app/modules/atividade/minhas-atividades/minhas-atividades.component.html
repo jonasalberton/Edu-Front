@@ -1,24 +1,29 @@
-<div class="container-div">
-		<div class="container-filtro">
-			<h3>Minhas atividades</h3>
+<div class="container-minhas">
+	<h3>Minhas atividades</h3>
+	<mat-card *ngFor="let atividade of atividades" class="card">
+		<div fxLayout="row" fxFlex="100%" fxLayoutGap="20px" fxLayoutAlign="start center" >
+
+			<mat-icon svgIcon="video"></mat-icon>
+			<label fxFlex="25%">{{atividade.titulo}}</label>
+			<label fxFlex="20%">criado em: {{atividade.dataCriacao | date:'dd/MM/yyyy'}}</label>
+			<label fxFlex="20%"> status: {{atividade.status}}</label>
+			<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="icone-more">
+				<mat-icon svgIcon="more"></mat-icon>
+			</button>
+			<mat-menu #menu="matMenu">
+				<button mat-menu-item>
+					<mat-icon svgIcon="editar"></mat-icon>
+					<span>Editar</span>
+				</button>
+				<button mat-menu-item >
+					<mat-icon svgIcon="enviar"></mat-icon>
+					<span>Solicitar Publicação</span>
+				</button>
+			</mat-menu>
 		</div>
-		<mat-accordion>
-			<mat-expansion-panel *ngFor="let atividade of atividades">
-				<mat-expansion-panel-header>
-					<mat-panel-title >
-						<div class="titulo-card">
-							<mat-icon svgIcon="video"></mat-icon>
-							<h5 style="margin: 0; margin-left: 20px; width: 80px">{{atividade.titulo}}</h5>
-							<h5 style="margin: 0; margin-left: 30px"> criada em {{atividade.dataCriacao | date:'dd/MM/yyyy'}}</h5>
-						</div>
-					</mat-panel-title>
-				</mat-expansion-panel-header>
-					
-			</mat-expansion-panel>
-		</mat-accordion>
-	</div>
 
-
+	</mat-card>
+</div>
 
 
 <button mat-fab color="primary" class="button-add" (click)="criarAtividade()">

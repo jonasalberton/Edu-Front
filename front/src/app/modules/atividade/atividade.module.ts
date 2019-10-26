@@ -24,6 +24,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AtividadeService } from 'src/app/shared/service/atividade.service';
 import { CapituloService } from 'src/app/shared/service/capitulo.service';
 import { AulaService } from 'src/app/shared/service/aula.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [
@@ -49,7 +50,8 @@ import { AulaService } from 'src/app/shared/service/aula.service';
 		DirectiveModule,
 		FormsModule,
 		MatInputModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		FlexLayoutModule 
 	],
 	entryComponents: [
 		DialogPermissaoCriadorComponent
