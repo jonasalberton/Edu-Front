@@ -23,4 +23,8 @@ export class AtividadeService extends AbstractService<Atividade>{
 		return this.httpGet('');
 	}
 
+	buscarAtividadePublicadas(): Observable<any> {
+		return this.httpGet('/aceitas');
+	}
+
 }

@@ -17,4 +17,8 @@ export class FileService extends AbstractService<any>{
         formData.append("file", file);
         return this.httpPostFile(formData, '/uploadFile');
     }
+
+    download(nome: string): Observable<any> {
+        return this.httpGetFile('/downloadFile/wallpaper.png');
+    }
 }

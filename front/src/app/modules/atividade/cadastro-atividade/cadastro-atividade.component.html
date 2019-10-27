@@ -4,12 +4,12 @@
 		<h4  class="subtitulo">Wallpaper</h4>
 		<div FileUploader (whenUploaded)="carregouImagem($event)" [accept]="'image/x-png,image/gif,image/jpeg'"
 			class="container-flex">
-			<div *ngIf="!atividade.imagem.id" class="image-upload background">
+			<div *ngIf="!atividade.imagem.src" class="image-upload background">
 				<mat-icon class="image-icon" svgIcon="imagem"></mat-icon>
 				<span>click para adicionar seu wallpaper</span>
 				<span>sugestão de 250x250</span>
 			</div>
-			<img  id="imagem" class="imagem">
+			<img *ngIf="atividade.imagem.src" id="imagem" src="{{atividade.imagem.src}}" class="imagem">
 		</div>
 
 		<div class="list">

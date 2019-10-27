@@ -34,9 +34,6 @@ export class CadastroAtividadeComponent implements OnInit {
         const imagem = files.target.files[0];
         const reader = new FileReader();
 
-        reader.onload = function (e) {
-            document.getElementById("imagem").setAttribute('src', (e.target as any).result);
-        }
         reader.readAsDataURL(imagem);
         this.salvarImagem(imagem);
     }
@@ -45,7 +42,7 @@ export class CadastroAtividadeComponent implements OnInit {
         this.fileService.save(imagem).subscribe(
             sucesso => {
                 this.atividade.imagem = new File();
-                this.atividade.imagem.id = sucesso.id;
+                this.atividade.imagem = sucesso
             },
             error => this.utilService.aviso("Erro ao fazer upload da imagem!")
         );

@@ -29,11 +29,11 @@
             </mat-expansion-panel-header>
                 <div *ngIf="solicitacao.tipoSolicitacao == 'CRIADOR'">
                     <h4>Deseja permitir que este usuário se torne um criador?</h4>
-                    <button mat-button>Negar</button>
+                    <button mat-button >Negar</button>
                     <button mat-button color="primary" cdkFocusInitial (click)="permitir(solicitacao)">Permitir</button>
                 </div>
                 <div *ngIf="solicitacao.tipoSolicitacao == 'PUBLICACAO'">
-                    asd
+                    <app-solicitacao-atividade [solicitacao]="solicitacao"></app-solicitacao-atividade>
                 </div>
         </mat-expansion-panel>
     </mat-accordion>

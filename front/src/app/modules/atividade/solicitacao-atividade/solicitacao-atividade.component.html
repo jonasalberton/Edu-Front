@@ -1,0 +1,25 @@
+<div class="titulo-publicacao">
+	<h4>O usuário {{solicitacao.solicitante.nome}} deseja publicar a atividade</h4>
+	<h4 class="atividade" (click)="navegarParaAtividade()">&nbsp;{{solicitacao.atividade.titulo}}</h4>
+</div>
+<div class="list">
+	<mat-form-field style="width: 100%">
+		<textarea matInput class="textarea" placeholder="Observações"  name="descricao"
+			></textarea>
+	</mat-form-field>
+	
+	<div>
+		<mat-form-field style="margin-right: 20px">
+			<input matInput type="number" placeholder="Carga horária do criador" name="chCriador" >
+		</mat-form-field>
+
+		<mat-form-field>
+			<input matInput type="number" placeholder="Carga horária dos alunos" name="chCriador" >
+		</mat-form-field>
+	</div>
+</div>
+
+
+<button mat-button>Negar</button>
+<button mat-button>Devolver</button>
+<button mat-button color="primary" cdkFocusInitial (click)="permitir()">Permitir</button>

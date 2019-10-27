@@ -1,0 +1,8 @@
+.titulo-publicacao {
+    display: flex;flex-direction: row;
+}
+
+.atividade {
+    color: #007cff;
+    cursor: pointer;
+}

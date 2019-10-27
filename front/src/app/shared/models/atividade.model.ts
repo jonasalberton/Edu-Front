@@ -17,4 +17,6 @@ export class Atividade {
     capitulos: Capitulo[];
     imagem: File;
     status: StatusSolicicao;
+    cargaHorariaCriador: number;
+    cargaHorariaAluno: number;
 }

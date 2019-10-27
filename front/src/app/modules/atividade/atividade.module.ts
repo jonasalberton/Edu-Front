@@ -25,6 +25,7 @@ import { AtividadeService } from 'src/app/shared/service/atividade.service';
 import { CapituloService } from 'src/app/shared/service/capitulo.service';
 import { AulaService } from 'src/app/shared/service/aula.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SolicitacaoAtividadeComponent } from './solicitacao-atividade/solicitacao-atividade.component';
 
 @NgModule({
 	declarations: [
@@ -38,6 +39,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 		CadastroAtividadeComponent,
 		CadastroCapituloComponent,
 		CadastroAulaComponent,
+		SolicitacaoAtividadeComponent,
 	],
 	imports: [
 		CommonModule,

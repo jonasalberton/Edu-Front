@@ -1,9 +1,11 @@
 import { Usuario } from './usuario.model';
+import { Atividade } from './atividade.model';
 
 export class Solicitacao {
     id: number;
     tipoSolicitacao: TipoSolicitacao;
     statusSolicitacao: StatusSolicicao
+    atividade: Atividade;
     descricao: string;
     solicitante: Usuario;
 }

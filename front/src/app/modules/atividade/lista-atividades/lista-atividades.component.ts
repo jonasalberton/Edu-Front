@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Atividade } from 'src/app/shared/models/atividade.model';
 import { Router } from '@angular/router';
+import { AtividadeService } from 'src/app/shared/service/atividade.service';
+import { UtilService } from 'src/app/shared/util/util.service';
+import { FileService } from 'src/app/shared/service/file.service';
 
 @Component({
 	selector: 'app-lista-atividades',
@@ -9,32 +12,27 @@ import { Router } from '@angular/router';
 })
 export class ListaAtividadesComponent implements OnInit {
 	atividades: Array<Atividade> = [];
+	file;
 
-	constructor(private router: Router) { }
+	constructor(
+		private router: Router,
+		private utilService: UtilService,
+		private atividadeService: AtividadeService) { }
 
-	ngOnInit() {
-		this.buildAtividadesMock();
-	}
-
-	buildAtividadesMock(): void {
-		let atividade = new Atividade();
-		atividade.descricao = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book';
-		atividade.titulo = 'Javascript';
-
-
-		this.atividades.push(atividade);
-		this.atividades.push({ ...atividade });
-		this.atividades.push({ ...atividade });
-		this.atividades.push({ ...atividade });
-		this.atividades.push({ ...atividade, titulo: 'Typescript' });
-		this.atividades.push({ ...atividade, titulo: 'Typescript' });
-		this.atividades.push({ ...atividade, titulo: 'Java' });
-		this.atividades.push({ ...atividade });
-		this.atividades.push({ ...atividade });
-		this.atividades.push({ ...atividade });
+	ngOnInit() {;
+		this.buscarAtividades();
 	}
 
 	navegarAtividade(atividade: Atividade): void {
-		this.router.navigate(['app/atividade']);
+		this.router.navigate(['app/atividade'], {queryParams: {atividade: atividade.id}});
+	}
+
+	buscarAtividades(): void {
+		this.atividadeService.buscarAtividadePublicadas().subscribe(
+			_atividades => {
+				this.atividades = _atividades;
+			},
+			erro => this.utilService.aviso('Erro ao buscar as atividades!')
+		)
 	}
 }

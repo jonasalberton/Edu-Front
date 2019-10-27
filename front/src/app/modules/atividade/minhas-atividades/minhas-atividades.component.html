@@ -6,7 +6,7 @@
 			<mat-icon svgIcon="video"></mat-icon>
 			<label fxFlex="25%">{{atividade.titulo}}</label>
 			<label fxFlex="20%">criado em: {{atividade.dataCriacao | date:'dd/MM/yyyy'}}</label>
-			<label fxFlex="20%"> status: {{atividade.status}}</label>
+			<label fxFlex="20%"> status: {{getStatusText(atividade.status)}}</label>
 			<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="icone-more">
 				<mat-icon svgIcon="more"></mat-icon>
 			</button>
@@ -15,7 +15,7 @@
 					<mat-icon svgIcon="editar"></mat-icon>
 					<span>Editar</span>
 				</button>
-				<button mat-menu-item >
+				<button mat-menu-item (click)="solicitarPublicao(atividade)">
 					<mat-icon svgIcon="enviar"></mat-icon>
 					<span>Solicitar Publicação</span>
 				</button>

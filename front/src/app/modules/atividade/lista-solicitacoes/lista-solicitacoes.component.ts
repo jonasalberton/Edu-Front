@@ -38,7 +38,7 @@ export class ListaSolicitacoesComponent implements OnInit, OnDestroy {
     }
 
     getIconByTiposolicitacao(solicitacao: Solicitacao): string {
-        return solicitacao.tipoSolicitacao === TipoSolicitacao.CRIADOR ? 'criador' : '';
+        return solicitacao.tipoSolicitacao === TipoSolicitacao.CRIADOR ? 'criador' : 'video';
     }
 
     setFiltro(filtro: StatusSolicicao): void {
