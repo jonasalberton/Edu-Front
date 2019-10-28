@@ -22,7 +22,7 @@ export class SolicitacaoService extends AbstractService<any>{
     }
 
     solicitarPermissaoPublicacao(atividade: Atividade): Observable<any> {
-        return this.httpPost(atividade, '/publicar-atividade')
+        return this.httpPost(atividade, '/solicitar-publicacao')
     }
 
     buscarPorstatus(status: StatusSolicicao): Observable<Array<Solicitacao>> {
@@ -34,6 +34,10 @@ export class SolicitacaoService extends AbstractService<any>{
     }
 
     permitirPublicacaoAtividade(solicitacao: Solicitacao): Observable<Solicitacao> {
-        return this.httpPost(solicitacao, '/admin/permitir-criador');
+        return this.httpPost(solicitacao, '/admin/permitir-publicacao');
+    }
+
+    negarPublicacaoAtividade(solicitacao: Solicitacao): Observable<Solicitacao> {
+        return this.httpPost(solicitacao, '/admin/negar-publicacao');
     }
 }

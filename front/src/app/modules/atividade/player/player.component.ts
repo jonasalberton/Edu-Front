@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, Input } from '@angular/core';
+import { Aula } from 'src/app/shared/models/aula.model';
+
 const ESCAPE_KEYCODE = 27;
 
 @Component({
@@ -7,7 +9,9 @@ const ESCAPE_KEYCODE = 27;
 	styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
+	@Input() aula: Aula;
 	@Output() onFechar = new EventEmitter<any>();
+
 	constructor() { }
 
 	ngOnInit() {

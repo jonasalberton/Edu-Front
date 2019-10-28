@@ -14,7 +14,7 @@
 						<mat-icon svgIcon="estrela"></mat-icon>
 						<mat-icon svgIcon="estrela"></mat-icon>
 					</div>
-					<h4 class="criador">Criado por {{atividade.criador.nome}}</h4>
+					<h4 class="criador">Criado por {{atividade.criador?.nome}}</h4>
 					<hr>
 					<h4 style="margin-bottom: 10px">Descrição da Atividade</h4>
 					<div class="descricao">{{atividade.descricao}}</div>
@@ -27,7 +27,7 @@
 						<mat-expansion-panel-header>
 							<mat-panel-title> <h4 style="margin: 0">{{capitulo.nome}}</h4></mat-panel-title>
 						</mat-expansion-panel-header>
-						<div *ngFor="let aula of capitulo.aulas" class="item-aula" (click)="visualizarPlayer()">
+						<div *ngFor="let aula of capitulo.aulas" class="item-aula" (click)="visualizarPlayer(aula)">
 							<mat-icon svgIcon="reproduzir"></mat-icon>
 							<label style="margin-left: 10px;">{{aula.nome}}</label>
 						</div>	
@@ -39,5 +39,6 @@
 
 <app-player 
 	*ngIf="visualizandoPlayer"
+	[aula]="aulaEmVisualizacao"
 	(onFechar)="visualizandoPlayer=false">
 </app-player>

@@ -14,7 +14,9 @@ import { UtilService } from 'src/app/shared/util/util.service';
 export class AtividadeComponent implements OnInit {
 	atividade: Atividade = new Atividade();
 	capitulos: Array<Capitulo> = [];
+	aulaEmVisualizacao: Aula;
 	visualizandoPlayer = false;
+	justView = false;
 
 	constructor(
 		private atividadeService: AtividadeService,
@@ -29,7 +31,12 @@ export class AtividadeComponent implements OnInit {
 	getParamsOfRoute(): void {
 		this.router.queryParams.subscribe( 
 			params => {
-				this.getAtividadeById(params.atividade)
+				this.justView = params['justView'] ? true : false;
+				if(this.justView) {
+					this.getAtividadeById(params['justView'])	
+				} else {
+					this.getAtividadeById(params['atividade'])
+				}
 			}
 		)
 	}
@@ -73,7 +80,8 @@ export class AtividadeComponent implements OnInit {
 		this.capitulos.push(capitulo2);
 	}
 
-	visualizarPlayer(): void {
+	visualizarPlayer(aula: Aula): void {
+		this.aulaEmVisualizacao = aula;
 		this.visualizandoPlayer = true;
 	}
 

@@ -33,7 +33,11 @@
                     <button mat-button color="primary" cdkFocusInitial (click)="permitir(solicitacao)">Permitir</button>
                 </div>
                 <div *ngIf="solicitacao.tipoSolicitacao == 'PUBLICACAO'">
-                    <app-solicitacao-atividade [solicitacao]="solicitacao"></app-solicitacao-atividade>
+                    <app-solicitacao-atividade 
+                        [solicitacao]="solicitacao"
+                        (onRemover)="removerSolicitacao($event)">
+
+                    </app-solicitacao-atividade>
                 </div>
         </mat-expansion-panel>
     </mat-accordion>

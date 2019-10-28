@@ -11,11 +11,11 @@
 				<mat-icon svgIcon="more"></mat-icon>
 			</button>
 			<mat-menu #menu="matMenu">
-				<button mat-menu-item>
+				<button mat-menu-item [disabled]="atividade.status == 'ACEITA'">
 					<mat-icon svgIcon="editar"></mat-icon>
 					<span>Editar</span>
 				</button>
-				<button mat-menu-item (click)="solicitarPublicao(atividade)">
+				<button mat-menu-item [disabled]="atividade.status == 'ACEITA'" (click)="solicitarPublicao(atividade)">
 					<mat-icon svgIcon="enviar"></mat-icon>
 					<span>Solicitar Publicação</span>
 				</button>

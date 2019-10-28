@@ -1,6 +1,6 @@
 <div class="container-player">
     <mat-icon svgIcon="fechar" class="fechar" (click)="fecharEmit()"></mat-icon>
     <video id="player" playsinline controls>
-        <source src="http://localhost:8080/file/downloadFile/Aula1.mp4" type="video/mp4" />
+        <source  src="{{aula.file.src}}" type="video/mp4" />
     </video>
 </div>
