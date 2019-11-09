@@ -50,40 +50,9 @@ export class AtividadeComponent implements OnInit {
 			erro => this.utilService.aviso('Erro ao tentar buscar os dados da atividade.')
 		)
 	}
-
-	buildCapitulos(): void {
-		let aula1 =  new Aula();
-		aula1.nome = 'Introdução ao Javascript';
-
-		let aula2 =  new Aula();
-		aula2.nome = 'Aonde ele deve ser utilizado';
-
-		let aula3 =  new Aula();
-		aula3.nome = 'Primeiros Passos';
-
-		let aula4 =  new Aula();
-		aula4.nome = 'Tipos de objetos';
-
-		let capitulo1 =  new Capitulo();
-		capitulo1.nome = 'Introdução';
-		capitulo1.aulas = [];
-		capitulo1.aulas.push(aula1);
-		capitulo1.aulas.push(aula2);
-
-		let capitulo2 =  new Capitulo();
-		capitulo2.nome = 'Primeiros Passos';
-		capitulo2.aulas = [];
-		capitulo2.aulas.push(aula3);
-		capitulo2.aulas.push(aula4);
-
-		this.capitulos.push(capitulo1);
-		this.capitulos.push(capitulo2);
-	}
-
+	
 	visualizarPlayer(aula: Aula): void {
 		this.aulaEmVisualizacao = aula;
 		this.visualizandoPlayer = true;
 	}
-
-	
 }

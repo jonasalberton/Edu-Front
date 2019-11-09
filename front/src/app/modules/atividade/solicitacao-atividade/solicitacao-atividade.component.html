@@ -5,16 +5,16 @@
 <div class="list">
 	<mat-form-field style="width: 100%">
 		<textarea matInput class="textarea" placeholder="Observações"  name="descricao"
-			></textarea>
+		></textarea>
 	</mat-form-field>
 	
 	<div>
 		<mat-form-field style="margin-right: 20px">
-			<input matInput type="number" placeholder="Carga horária do criador" name="chCriador" >
+			<input matInput type="number" [(ngModel)]="solicitacao.atividade.cargaHorariaCriador" placeholder="Carga horária do criador" name="chCriador" >
 		</mat-form-field>
 
 		<mat-form-field>
-			<input matInput type="number" placeholder="Carga horária dos alunos" name="chCriador" >
+			<input matInput type="number" [(ngModel)]="solicitacao.atividade.cargaHorariaAluno" placeholder="Carga horária dos alunos" name="chCriador" >
 		</mat-form-field>
 	</div>
 </div>

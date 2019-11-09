@@ -50,5 +50,4 @@ export class SolicitacaoAtividadeComponent implements OnInit {
 		solicitacao.atividade.criador = {username: this.solicitacao.solicitante.username} as any;
 		return solicitacao;
 	}
-
 }
