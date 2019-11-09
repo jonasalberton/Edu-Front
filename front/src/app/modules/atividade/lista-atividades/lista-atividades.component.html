@@ -2,7 +2,7 @@
     <h3 style="margin-left: 20px">Atividades Disponiveis</h3>
     <div class="lista">
         <div *ngFor=" let atividade of atividades" class="atividade" (click)="navegarAtividade(atividade)">
-            <img class="image" src="http://localhost:8080/file/downloadFile/wallpaper.png">
+            <img class="image" src="{{atividade.imagem.src}}">
             <div class="container-descricao">
                 <label class="titulo">{{atividade.titulo}}</label>
                 <div class="descricao">{{atividade.descricao}}</div>
