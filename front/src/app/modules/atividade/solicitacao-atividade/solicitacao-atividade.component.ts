@@ -27,12 +27,16 @@ export class SolicitacaoAtividadeComponent implements OnInit {
 	}
 
 	permitir(): void {
-        this.solicitacaoService.permitirPublicacaoAtividade(this.getSolicitacaoCopy()).subscribe(
-            _solicitacao => {
-				this.onRemover.emit(this.solicitacao);
-			},
-			erro => this.utilService.aviso('Erro ao permitir publicação')
-        );
+		if (!this.solicitacao.atividade.cargaHorariaAluno) {
+			alert("Selecione a carga horaria");
+		} else {
+			this.solicitacaoService.permitirPublicacaoAtividade(this.getSolicitacaoCopy()).subscribe(
+				_solicitacao => {
+					this.onRemover.emit(this.solicitacao);
+				},
+				erro => this.utilService.aviso('Erro ao permitir publicação')
+				);
+		}
 	}
 
 	negar(): void {

@@ -18,5 +18,9 @@ export class CertificadoService  extends AbstractService<any>{
 
 	buscarTodos(): Observable<Certificado[]> {
 		return this.httpGet('');
-  }
+	}
+	
+	gerarCertificadoAluno(certificado: Certificado): Observable<Certificado> {
+		return this.httpPost(certificado, '/aluno');
+	}
 }

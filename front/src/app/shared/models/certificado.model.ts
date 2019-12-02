@@ -5,4 +5,5 @@ export class Certificado {
     id: number;
     usuario: Usuario;
     atividade: Atividade;
+    criador: boolean;
 }

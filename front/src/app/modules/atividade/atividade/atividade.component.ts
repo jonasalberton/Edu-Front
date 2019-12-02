@@ -5,6 +5,9 @@ import { AtividadeService } from 'src/app/shared/service/atividade.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Atividade } from 'src/app/shared/models/atividade.model';
 import { UtilService } from 'src/app/shared/util/util.service';
+import { CertificadoService } from 'src/app/shared/service/certificado.service';
+import { Certificado } from 'src/app/shared/models/certificado.model';
+import { LocalStorageService } from 'src/app/shared/service/local-storage.service';
 
 @Component({
 	selector: 'app-atividade',
@@ -21,7 +24,9 @@ export class AtividadeComponent implements OnInit {
 	constructor(
 		private atividadeService: AtividadeService,
 		private router: ActivatedRoute,
-		private utilService: UtilService
+		private utilService: UtilService,
+		private certificadoService: CertificadoService,
+		private localStorage: LocalStorageService
 	) { }
 
 	ngOnInit() {
@@ -52,7 +57,31 @@ export class AtividadeComponent implements OnInit {
 	}
 	
 	visualizarPlayer(aula: Aula): void {
+		this.isUltimaAula(aula);
 		this.aulaEmVisualizacao = aula;
 		this.visualizandoPlayer = true;
+	}
+
+	isUltimaAula(aula: Aula): void {
+		const lastCapitulo = this.atividade.capitulos[this.atividade.capitulos.length -1 ];
+		const lastAula = lastCapitulo.aulas[lastCapitulo.aulas.length - 1];
+
+		if(aula.id === lastAula.id) {
+			this.buildCertificadoAluno();
+		}
+	}
+
+
+	buildCertificadoAluno(): void {
+		let certificado = new Certificado();
+		certificado.criador = false;
+		certificado.atividade = {id: this.atividade.id} as any;
+		certificado.usuario = {username: this.localStorage.getUsuario().username} as any;
+
+		this.certificadoService.gerarCertificadoAluno(certificado).subscribe(
+			() => {
+				console.log('gerou certificado');
+			}
+		)
 	}
 }

@@ -4,7 +4,7 @@
       <div  class="atividade" *ngFor="let certificado of certificados">
           <img class="image" (click)="printIt(certificado)" #image src="../../../../assets/certificado/modelo-teste.png">
           <div class="container-descricao">
-              <label class="titulo">Javascript Avançado</label>
+              <label class="titulo">{{certificado.atividade.titulo}}</label>
           </div>
       </div>
   </div>
